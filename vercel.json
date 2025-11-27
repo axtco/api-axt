@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "cleanUrls": true,
+  "rewrites": [
+    { 
+      "source": "/rules", 
+      "destination": "/rules.html" 
+    },
+    { 
+      "source": "/lore", 
+      "destination": "/lore.html" 
+    },
+    { 
+      "source": "/developers", 
+      "destination": "/developers.html" 
+    },
+    { 
+      "source": "/whitelist", 
+      "destination": "/whitelist.html" 
+    },
+    { 
+      "source": "/contact", 
+      "destination": "/contact.html" 
+    },
+    { 
+      "source": "/terms", 
+      "destination": "/terms.html" 
+    },
+    { 
+      "source": "/privacy", 
+      "destination": "/privacy.html" 
+    },
+    { 
+      "source": "/index", 
+      "destination": "/index.html" 
+    }
+  ]
+}
