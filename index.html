@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- META DATA & SEO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Primary Meta Tags -->
+    <title>AxtCity Roleplay | Premium FiveM Serious RP Server</title>
+    <meta name="title" content="AxtCity Roleplay | Premium FiveM Serious RP Server">
+    <meta name="description" content="Join AxtCity Roleplay, the ultimate immersive FiveM server. Experience serious RP with custom cars, whitelisted jobs, realistic economy, and active staff. Launching June 19, 2026.">
+    <meta name="keywords" content="FiveM, GTA V Roleplay, Serious RP, AxtCity, FiveM Server India, Custom FiveM, Roleplay Server, GTA 5 RP, Best FiveM Server">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="author" content="AxtCity Development Team">
+    <meta name="theme-color" content="#050505">
+
+    <!-- Open Graph / Facebook / Discord -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://axtcity.online/">
+    <meta property="og:title" content="AxtCity Roleplay | Play Behind Reality">
+    <meta property="og:description" content="A sprawling metropolis where every street has a story. Join the most immersive serious RP community. Launching 2026.">
+    <meta property="og:image" content="https://cdn.axt.co.in/logo.jpg">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:site_name" content="AxtCity Roleplay">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://axtcity.online/">
+    <meta property="twitter:title" content="AxtCity Roleplay | Premium FiveM Server">
+    <meta property="twitter:description" content="Step into a world where every citizen has a role. Realistic economy, custom scripts, and endless stories.">
+    <meta property="twitter:image" content="https://cdn.axt.co.in/logo.jpg">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/jpg" href="https://cdn.axt.co.in/logo.jpg">
+    <link rel="shortcut icon" type="image/jpg" href="https://cdn.axt.co.in/logo.jpg">
+    <link rel="apple-touch-icon" href="https://cdn.axt.co.in/logo.jpg">
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Schema.org JSON-LD (For Google Rich Results) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "OnlineBusiness",
+      "name": "AxtCity Roleplay",
+      "url": "https://axtcity.online",
+      "logo": "https://cdn.axt.co.in/logo.jpg",
+      "description": "Premium FiveM Roleplay Server with realistic economy and serious RP.",
+      "foundingDate": "2026-06-19",
+      "sameAs": [
+        "https://discord.gg/yourlink",
+        "https://twitter.com/yourhandle"
+      ]
+    }
+    </script>
+
+    <style>
+        /* EXACT AXTCLOUD DESIGN SYSTEM */
+        :root {
+            --primary-red: #ff0000;
+            --dark-bg: #050505;
+            --card-bg: #111111;
+            --card-hover: #161616;
+            --text-white: #ffffff;
+            --text-muted: #aaaaaa;
+            --border-color: #222;
+            --gradient: linear-gradient(135deg, #ff0000 0%, #8b0000 100%);
+            --header-height: 80px;
+        }
+
+        /* RESET & BASE */
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: var(--header-height);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-white);
+            overflow-x: hidden;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* UTILITIES */
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; }
+
+        /* ANIMATIONS */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* HEADER */
+        header {
+            position: fixed; top: 0; width: 100%; height: var(--header-height); padding: 0 5%;
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(5, 5, 5, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .brand { font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; gap: 10px; z-index: 1002; text-transform: uppercase; letter-spacing: 1px; }
+        .brand span { color: var(--primary-red); }
+        .brand img { width: 40px; height: 40px; border-radius: 8px; }
+
+        /* DESKTOP NAV */
+        .nav-links { display: flex; gap: 30px; align-items: center; }
+        .nav-links a { font-size: 0.95rem; color: #ccc; font-weight: 500; position: relative; }
+        .nav-links a:hover, .nav-links a.active { color: var(--text-white); }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px;
+            background: var(--primary-red); transition: 0.3s;
+        }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+
+        .cta-btn {
+            background: var(--primary-red); padding: 10px 24px; border-radius: 8px; font-weight: 600;
+            color: white !important; box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3); display: inline-block;
+            border: none; cursor: pointer;
+        }
+        .cta-btn:hover { background: #cc0000; transform: translateY(-2px); }
+
+        .mobile-toggle { display: none; font-size: 1.5rem; color: #fff; cursor: pointer; z-index: 1002; }
+
+        /* HERO SECTION */
+        .hero {
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 20px 60px;
+            background: radial-gradient(circle at center, #1a0000 0%, var(--dark-bg) 70%);
+            position: relative;
+        }
+        
+        .hero::before {
+            content: ''; position: absolute; top:0; left:0; width:100%; height:100%;
+            background-image: radial-gradient(#222 1px, transparent 1px);
+            background-size: 40px 40px; opacity: 0.15; pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #fff, #aaa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero h1 span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p.subtitle {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        /* STATS GRID */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 60px;
+            width: 100%;
+            max-width: 1100px;
+            padding: 0 10px;
+        }
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            backdrop-filter: blur(5px);
+        }
+        .stat-val { font-size: 1.2rem; font-weight: 700; color: var(--primary-red); display: block; margin-bottom: 5px; }
+        .stat-label { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* SECTIONS */
+        section { padding: 80px 5%; max-width: 1400px; margin: 0 auto; }
+        
+        .section-header { margin-bottom: 50px; text-align: center; }
+        .section-header h2 { font-size: clamp(2rem, 5vw, 2.5rem); margin-bottom: 15px; }
+        .section-header p { color: var(--text-muted); max-width: 600px; margin: 0 auto; }
+        .highlight { color: var(--primary-red); }
+
+        /* SERVICES/FEATURES GRID */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 40px;
+            border-radius: 20px;
+            transition: 0.4s ease;
+            position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .card:hover {
+            border-color: var(--primary-red);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 0, 0, 0.1);
+        }
+        .card i { font-size: 2.5rem; color: var(--primary-red); margin-bottom: 20px; }
+        .card h3 { font-size: 1.5rem; margin-bottom: 15px; font-weight: 600; }
+        .card p { color: var(--text-muted); font-size: 0.95rem; flex-grow: 1; margin-bottom: 20px; }
+        .card-link { color: #fff; font-weight: 600; margin-top: auto; display: inline-flex; align-items: center; gap: 8px; }
+        .card-link:hover { color: var(--primary-red); gap: 12px; }
+
+        /* DEPARTMENTS PILLS */
+        .os-section { background: #0a0a0a; width: 100%; padding: 80px 20px; }
+        .os-container { max-width: 1200px; margin: 0 auto; text-align: center; }
+        
+        .os-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+        }
+        .os-pill {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+            font-size: 0.95rem;
+            cursor: default;
+        }
+        .os-pill:hover { border-color: var(--primary-red); background: #222; }
+        .os-pill i { color: var(--primary-red); }
+
+        /* CTA BOX */
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(to bottom, var(--dark-bg), #150000);
+            padding: 100px 20px;
+            border-top: 1px solid #222;
+        }
+        .cta-box { max-width: 800px; margin: 0 auto; }
+
+        /* FOOTER */
+        footer { background: #080808; border-top: 1px solid #222; padding: 80px 5%; color: #666; }
+        .footer-container { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; max-width: 1400px; margin: 0 auto; }
+        .footer-brand { display: flex; flex-direction: column; gap: 15px; }
+        .footer-brand img { opacity: 0.5; filter: grayscale(100%); width: 40px; }
+        
+        .footer-col h4 { color: #fff; margin-bottom: 20px; font-size: 1.1rem; }
+        .footer-col ul li { margin-bottom: 10px; }
+        .footer-col ul li a { color: #999; font-size: 0.9rem; transition: 0.3s; }
+        .footer-col ul li a:hover { color: var(--primary-red); padding-left: 5px; }
+        
+        .copyright-bar { border-top: 1px solid #222; margin-top: 60px; padding-top: 30px; text-align: center; font-size: 0.85rem; }
+
+        /* MOBILE SPECIFIC */
+        @media (max-width: 992px) {
+            .mobile-toggle { display: block; }
+            .nav-links {
+                position: fixed; top: 0; right: -100%; height: 100vh; width: 75%; max-width: 300px;
+                background: #111; flex-direction: column; justify-content: center; align-items: center;
+                gap: 40px; transition: 0.4s ease; z-index: 1001;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+            }
+            .nav-links.active { right: 0; }
+            .overlay {
+                position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+                background: rgba(0,0,0,0.7); z-index: 1000; display: none;
+                opacity: 0; transition: 0.3s;
+            }
+            .overlay.active { display: block; opacity: 1; }
+            .footer-container { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .hero { padding-top: 100px; }
+            .stats-grid { grid-template-columns: 1fr 1fr; }
+            .os-pill { width: 100%; justify-content: center; }
+            .footer-container { grid-template-columns: 1fr; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="overlay" id="overlay"></div>
+
+    <header>
+        <a href="index.html" class="brand">
+            <img src="https://cdn.axt.co.in/logo.jpg" alt="AxtCity Logo" width="40" height="40">
+            <div>AXT<span>City</span></div>
+        </a>
+
+        <div class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="index.html" class="active">Home</a>
+            <a href="lore.html">Lore</a>
+            <a href="developers.html">Devs</a>
+            <a href="rules.html">Rules</a>
+            <a href="contact.html">Contact</a>
+            <a href="https://discord.gg/yourlink" class="cta-btn"><i class="fa-brands fa-discord"></i> Join Discord</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="reveal">
+            <h1>Play Behind<br><span>Reality.</span></h1>
+            <p class="subtitle">AxtCity creates a canvas where your story provides the color. A new generation of immersive roleplay defined by choice, consequence, and freedom.</p>
+            
+            <div style="margin-bottom: 30px; font-weight: bold; color: #fff; letter-spacing: 2px;">
+                EST. JUNE 19, 2026
+            </div>
+
+            <div>
+                <a href="https://discord.gg/yourlink" class="cta-btn" style="padding: 15px 40px; font-size: 1.1rem;">Join the City</a>
+                <a href="lore.html" class="cta-btn" style="background: transparent; border: 1px solid #333; color: #fff !important; margin-left: 10px;">Read The Lore</a>
+            </div>
+        </div>
+
+        <div class="stats-grid reveal">
+            <div class="stat-item">
+                <span class="stat-val">Whitelisted</span>
+                <span class="stat-label">Serious RP</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-val">Custom</span>
+                <span class="stat-label">Handling & Cars</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-val">Active</span>
+                <span class="stat-label">Staff Team</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-val">Optimized</span>
+                <span class="stat-label">Low Latency</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="features">
+        <div class="section-header reveal">
+            <h2>Life in <span class="highlight">The City</span></h2>
+            <p>Choose your path. From legal hustles to underground empires.</p>
+        </div>
+
+        <div class="services-grid">
+            <a href="rules.html" class="card reveal">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <h3>Justice System</h3>
+                <p>A fully functioning DOJ with lawyers, judges, and court cases. Your actions have real legal consequences.</p>
+                <div class="card-link">Read Laws <i class="fa-solid fa-arrow-right"></i></div>
+            </a>
+
+            <a href="#" class="card reveal">
+                <i class="fa-solid fa-handcuffs"></i>
+                <h3>Law Enforcement</h3>
+                <p>Join the PD using custom fleets and advanced evidence scripts. Protect and serve the streets of AxtCity.</p>
+                <div class="card-link">Apply PD <i class="fa-solid fa-arrow-right"></i></div>
+            </a>
+
+            <a href="#" class="card reveal">
+                <i class="fa-solid fa-mask"></i>
+                <h3>Criminal Life</h3>
+                <p>Drugs, heists, and gang turf wars. Navigate the underworld, but watch your back.</p>
+                <div class="card-link">Enter Underworld <i class="fa-solid fa-arrow-right"></i></div>
+            </a>
+
+            <a href="#" class="card reveal">
+                <i class="fa-solid fa-wrench"></i>
+                <h3>Civilian Jobs</h3>
+                <p>Own businesses, work as a mechanic, run a restaurant, or drive a taxi. The economy relies on you.</p>
+                <div class="card-link">View Jobs <i class="fa-solid fa-arrow-right"></i></div>
+            </a>
+        </div>
+    </section>
+
+    <div class="os-section" id="jobs">
+        <div class="os-container reveal">
+            <h2>Whitelisted <span class="highlight">Departments</span></h2>
+            <p style="color:#aaa; margin-top:10px;">Apply today to secure your career before launch.</p>
+            
+            <div class="os-grid">
+                <div class="os-pill"><i class="fa-solid fa-shield-halved"></i> Police Dept</div>
+                <div class="os-pill"><i class="fa-solid fa-user-nurse"></i> EMS / Medical</div>
+                <div class="os-pill"><i class="fa-solid fa-gavel"></i> Dept of Justice</div>
+                <div class="os-pill"><i class="fa-solid fa-wrench"></i> Bennys Motorworks</div>
+                <div class="os-pill"><i class="fa-solid fa-house"></i> Real Estate</div>
+                <div class="os-pill"><i class="fa-solid fa-burger"></i> UwU Cat Cafe</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-section">
+        <div class="cta-box reveal">
+            <h2>Ready to Start Your <span class="highlight">Story?</span></h2>
+            <p style="color:#ccc; margin: 20px 0;">The city is waiting for you. Join the Discord to get whitelisted.</p>
+            <a href="https://discord.gg/yourlink" class="cta-btn" style="font-size: 1.2rem; padding: 18px 40px;">Join Discord Server</a>
+            <p style="margin-top: 15px; font-size: 0.9rem; color: #666;">Launching June 19th, 2026</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            
+            <div class="footer-brand">
+                <div class="brand" style="filter: grayscale(100%); opacity: 0.5;">
+                    <img src="https://cdn.axt.co.in/logo.jpg" alt="AxtCity Logo" width="30">
+                    <div>AXT<span>City</span></div>
+                </div>
+                <p style="margin-top:15px; font-size:0.9rem;">AxtCity Roleplay creates a monochrome canvas where your story provides the color. A premium FiveM experience.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="lore.html">The Lore</a></li>
+                    <li><a href="developers.html">Developers</a></li>
+                    <li><a href="rules.html">City Rules</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Community</h4>
+                <ul>
+                    <li><a href="#">Discord</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">TikTok</a></li>
+                    <li><a href="#">Youtube</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="copyright-bar">
+            <p>© <span id="year"></span> AxtCity Roleplay. All Rights Reserved.</p>
+            <p style="color:#444; margin-top:5px;">Not affiliated with Rockstar Games.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Year Update
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Logic
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+        const overlay = document.getElementById('overlay');
+        const toggleIcon = mobileToggle.querySelector('i');
+
+        function toggleMenu() {
+            const isActive = navLinks.classList.toggle('active');
+            overlay.classList.toggle('active');
+            if (isActive) {
+                toggleIcon.classList.remove('fa-bars');
+                toggleIcon.classList.add('fa-xmark');
+                document.body.style.overflow = 'hidden';
+            } else {
+                toggleIcon.classList.remove('fa-xmark');
+                toggleIcon.classList.add('fa-bars');
+                document.body.style.overflow = '';
+            }
+        }
+        mobileToggle.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+
+        // Reveal Animation
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    </script>
+
+</body>
+</html>
+

@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>The Team | AxtCity Roleplay</title>
+    <meta name="description" content="Meet the creative minds and developers behind AxtCity Roleplay.">
+    <meta name="theme-color" content="#050505">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* AXTCLOUD DESIGN SYSTEM - EXPANDED */
+        :root {
+            --primary-red: #ff0000;
+            --dark-bg: #050505;
+            --card-bg: #111111;
+            --card-hover: #161616;
+            --text-white: #ffffff;
+            --text-muted: #aaaaaa;
+            --border-color: #222;
+            --gradient: linear-gradient(135deg, #ff0000 0%, #8b0000 100%);
+            --header-height: 80px;
+        }
+
+        /* RESET & BASE */
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: var(--header-height);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-white);
+            overflow-x: hidden;
+            line-height: 1.6;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(255, 0, 0, 0.03), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(255, 0, 0, 0.03), transparent 25%);
+        }
+
+        /* UTILITIES */
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* HEADER */
+        header {
+            position: fixed; top: 0; width: 100%; height: var(--header-height); padding: 0 5%;
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(5, 5, 5, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .brand { font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; gap: 10px; z-index: 1002; text-transform: uppercase; letter-spacing: 1px; }
+        .brand span { color: var(--primary-red); }
+
+        .nav-links { display: flex; gap: 30px; align-items: center; }
+        .nav-links a { font-size: 0.95rem; color: #ccc; font-weight: 500; position: relative; }
+        .nav-links a:hover, .nav-links a.active { color: var(--text-white); }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px;
+            background: var(--primary-red); transition: 0.3s;
+        }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+
+        .cta-btn {
+            background: var(--primary-red); padding: 10px 24px; border-radius: 8px; font-weight: 600;
+            color: white !important; box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3); display: inline-block;
+            border: none; cursor: pointer;
+        }
+        .cta-btn:hover { background: #cc0000; transform: translateY(-2px); }
+
+        .mobile-toggle { display: none; font-size: 1.5rem; color: #fff; cursor: pointer; z-index: 1002; }
+
+        /* PAGE HERO */
+        .page-hero {
+            min-height: 50vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; padding: 120px 20px 60px; position: relative; overflow: hidden;
+        }
+        
+        .page-hero::before {
+            content: ''; position: absolute; top:0; left:0; width:100%; height:100%;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px; opacity: 0.3; pointer-events: none;
+        }
+
+        .page-hero h1 { font-size: clamp(3rem, 7vw, 5rem); font-weight: 800; margin-bottom: 10px; text-transform: uppercase; line-height: 1; letter-spacing: -2px; }
+        .page-hero h1 span { 
+            background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .page-hero p { font-size: clamp(1rem, 2vw, 1.2rem); color: var(--text-muted); max-width: 600px; margin: 20px auto 0; }
+
+        /* --- ADVANCED DEV GRID --- */
+        section { padding: 40px 5% 80px; max-width: 1400px; margin: 0 auto; }
+
+        /* Leadership Grid (2 Columns) */
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        /* Standard Grid (3 Columns) */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .dev-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 40px 30px;
+            border-radius: 24px;
+            text-align: center;
+            transition: 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* Tech Mesh Pattern Background */
+            background-image: radial-gradient(#1a1a1a 15%, transparent 16%);
+            background-size: 16px 16px;
+        }
+
+        .dev-card::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, var(--dark-bg) 100%);
+            pointer-events: none;
+        }
+
+        .dev-card:hover {
+            border-color: #333;
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
+        /* Premium Glow Effect for Leadership */
+        .dev-card.premium:hover {
+            border-color: var(--primary-red);
+            box-shadow: 0 20px 50px rgba(255, 0, 0, 0.15);
+        }
+
+        /* Avatar Styling */
+        .avatar-wrapper {
+            position: relative;
+            width: 140px;
+            height: 140px;
+            margin-bottom: 25px;
+            z-index: 2;
+        }
+
+        .avatar-circle {
+            width: 100%;
+            height: 100%;
+            background: #161616;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3.5rem;
+            color: #333;
+            border: 1px solid #333;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            z-index: 2;
+            overflow: hidden;
+        }
+        
+        .avatar-circle img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
+
+        /* Floating Badge for single Roles (used by Creative Director, etc.) */
+        .role-badge {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%) translateY(50%);
+            background: #222;
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid #333;
+            white-space: nowrap;
+            z-index: 3;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            /* Added display flex for centering icon */
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+        }
+
+        .premium .role-badge {
+            background: var(--primary-red);
+            border-color: var(--primary-red);
+        }
+
+        .dev-card:hover .avatar-circle {
+            transform: scale(1.05);
+            border-color: var(--primary-red);
+            color: var(--primary-red);
+        }
+
+        /* Content Styling */
+        .dev-content { position: relative; z-index: 2; width: 100%; }
+
+        .dev-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px; /* Gap between name and verified badge */
+        }
+
+        .verified-badge {
+            width: 40px;
+            height: 40px;
+            vertical-align: middle;
+            filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.3));
+        }
+        
+        /* --- MULTI-ROLE BADGE STYLES --- */
+        .role-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-top: -5px; /* Pull up closer to the name */
+            margin-bottom: 20px;
+        }
+
+        .role-tag {
+            background: var(--primary-red);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: 1px solid #ff4d4d;
+            /* Added display flex for centering icon */
+            display: flex; 
+            align-items: center;
+        }
+
+        /* Override for standard (non-premium) cards */
+        .dev-card:not(.premium) .role-tag {
+            background: #333;
+            border-color: #444;
+        }
+        /* ---------------------------------- */
+
+
+        .dev-desc {
+            color: #888;
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .dev-socials {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: auto;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.05);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            transition: 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .social-icon:hover {
+            background: var(--primary-red);
+            box-shadow: 0 0 20px rgba(255,0,0,0.4);
+            transform: translateY(-3px);
+        }
+
+        /* FOOTER */
+        footer { background: #080808; border-top: 1px solid #222; padding: 80px 5%; color: #666; margin-top: 40px; }
+        .footer-container { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; max-width: 1400px; margin: 0 auto; }
+        .footer-brand { display: flex; flex-direction: column; gap: 15px; }
+        .footer-col h4 { color: #fff; margin-bottom: 20px; font-size: 1.1rem; }
+        .footer-col ul li { margin-bottom: 10px; }
+        .footer-col ul li a { color: #999; font-size: 0.9rem; transition: 0.3s; }
+        .footer-col ul li a:hover { color: var(--primary-red); padding-left: 5px; }
+        .copyright-bar { border-top: 1px solid #222; margin-top: 60px; padding-top: 30px; text-align: center; font-size: 0.85rem; }
+
+        /* RESPONSIVE */
+        @media (max-width: 992px) {
+            .mobile-toggle { display: block; }
+            .nav-links {
+                position: fixed; top: 0; right: -100%; height: 100vh; width: 75%; max-width: 300px;
+                background: #111; flex-direction: column; justify-content: center; align-items: center;
+                gap: 40px; transition: 0.4s ease; z-index: 1001;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+            }
+            .nav-links.active { right: 0; }
+            .overlay {
+                position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+                background: rgba(0,0,0,0.7); z-index: 1000; display: none;
+                opacity: 0; transition: 0.3s;
+            }
+            .overlay.active { display: block; opacity: 1; }
+            .leadership-grid { grid-template-columns: 1fr; }
+            .footer-container { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 480px) {
+            .footer-container { grid-template-columns: 1fr; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="overlay" id="overlay"></div>
+
+    <header>
+        <a href="index.html" class="brand">
+            <i class="fa-solid fa-city" style="color: var(--primary-red);"></i>
+            <div>AXT<span>City</span></div>
+        </a>
+
+        <div class="mobile-toggle" id="mobileToggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="lore.html">Lore</a>
+            <a href="developers.html" class="active">Developers</a>
+            <a href="index.html#jobs">Jobs</a>
+            <a href="https://discord.gg/yourlink" class="cta-btn"><i class="fa-brands fa-discord"></i> Join Discord</a>
+        </nav>
+    </header>
+
+    <div class="page-hero">
+        <div class="reveal">
+            <h1>The <br><span>Visionaries</span></h1>
+            <p>The architects, designers, and engineers building the future of AxtCity.</p>
+        </div>
+    </div>
+
+    <section>
+        <div class="leadership-grid reveal">
+            
+            <div class="dev-card premium">
+                <div class="avatar-wrapper">
+                    <div class="avatar-circle">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <div class="role-badge">Creative Director</div>
+                </div>
+                <div class="dev-content">
+                    <h3 class="dev-name">THEBN Ebin Sebastian</h3>
+                    <p class="dev-desc">
+                        The visionary driving the brand identity and creative direction. Ensuring every pixel and polygon tells the story of AxtCity.
+                    </p>
+                    <div class="dev-socials">
+                        <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-discord"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dev-card premium">
+                <div class="avatar-wrapper">
+                    <div class="avatar-circle">
+                        <img src="pfp/aviorxt.png" alt="aviorxt Profile Picture">
+                    </div>
+                    </div>
+                <div class="dev-content">
+                    <h3 class="dev-name">
+                        aviorxt <img src="https://cdn3.emoji.gg/emojis/29764-verifieds.png" alt="Verified" class="verified-badge">
+                    </h3>
+                    <div class="role-list">
+                        <span class="role-tag"><img src="https://cdn3.emoji.gg/emojis/335142-developericon.png" alt="Dev Icon" style="height: 14px; margin-right: 4px; vertical-align: middle;">Lead Developer</span>
+                        <span class="role-tag"><img src="https://cdn3.emoji.gg/emojis/529346-owner.png" alt="Owner Icon" style="height: 14px; margin-right: 4px; vertical-align: middle;">Owner</span>
+                        <span class="role-tag"><img src="https://cdn3.emoji.gg/emojis/335142-developericon.png" alt="Dev Icon" style="height: 14px; margin-right: 4px; vertical-align: middle;">Bot Developer</span>
+                        <span class="role-tag">E<sub style="font-size: 0.8em;">c</sub>=mc²</span>
+                        <span class="role-tag">Aqua God</span>
+                    </div>
+                    <p class="dev-desc">
+                        The architect of the core framework. Mastering optimization and server stability to provide a seamless experience.
+                    </p>
+                    <div class="dev-socials">
+                        <a href="#" class="social-icon"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-solid fa-server"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-discord"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="team-grid reveal">
+
+            <div class="dev-card">
+                <div class="avatar-wrapper">
+                    <div class="avatar-circle">
+                        <img src="pfp/erroraero.png" alt="erroraero Profile Picture">
+                    </div>
+                    </div>
+                <div class="dev-content">
+                    <h3 class="dev-name">
+                        erroraero <img src="https://cdn3.emoji.gg/emojis/29764-verifieds.png" alt="Verified" class="verified-badge">
+                    </h3>
+                    <div class="role-list">
+                        <span class="role-tag">Admin</span>
+                        <span class="role-tag">Spectrum</span>
+                        <span class="role-tag">Management</span>
+                        <span class="role-tag"><img src="https://cdn3.emoji.gg/emojis/335142-developericon.png" alt="Dev Icon" style="height: 14px; margin-right: 4px; vertical-align: middle;">Developer</span>
+                        <span class="role-tag">Qbox</span>
+                        <span class="role-tag">Adviser Engineer</span>
+                        <span class="role-tag">Fire God</span>
+                    </div>
+                    <p class="dev-desc">
+                        Building the world brick by brick. Custom interiors, exterior mapping, and environmental storytelling.
+                    </p>
+                    <div class="dev-socials">
+                        <a href="#" class="social-icon"><i class="fa-solid fa-earth-americas"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-discord"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dev-card">
+                <div class="avatar-wrapper">
+                    <div class="avatar-circle">
+                        <i class="fa-solid fa-pen-ruler"></i>
+                    </div>
+                    </div>
+                <div class="dev-content">
+                    <h3 class="dev-name">dhecruze</h3>
+                    <div class="role-list">
+                        <span class="role-tag">Node.js</span>
+                        <span class="role-tag">Firewalls</span>
+                        <span class="role-tag">Proxy Setup</span>
+                        <span class="role-tag">API Security</span>
+                        <span class="role-tag">Server Configuration</span>
+                        <span class="role-tag">Conflict System Architect</span>
+                        <span class="role-tag">Digital infrastructure Designer</span>
+                        <span class="role-tag">E=mc²</span>
+                    </div>
+                    <p class="dev-desc">
+                        Crafting the aesthetic and layout. Ensuring the city flows naturally for the best roleplay interactions.
+                    </p>
+                    <div class="dev-socials">
+                        <a href="#" class="social-icon"><i class="fa-brands fa-behance"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-discord"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dev-card">
+                <div class="avatar-wrapper">
+                    <div class="avatar-circle">
+                        <i class="fa-solid fa-cubes"></i>
+                    </div>
+                    <div class="role-badge" style="background: #333; border-color: #444;">Assets Dev</div>
+                </div>
+                <div class="dev-content">
+                    <h3 class="dev-name">Naruto</h3>
+                    <p class="dev-desc">
+                        Managing and optimizing server assets. From custom clothing to vehicle handling, ensuring every item loads perfectly.
+                    </p>
+                    <div class="dev-socials">
+                        <a href="https://www.instagram.com/arun._ooi?igsh=NnZpaTc4MnhqMDgx" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-discord"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dev-card">
+                <div class="avatar-wrapper">
+                    <div class="avatar-circle">
+                        <img src="pfp/goboy.png" alt="goboy Profile Picture">
+                    </div>
+                    </div>
+                <div class="dev-content">
+                    <h3 class="dev-name">
+                        goboy <img src="https://cdn3.emoji.gg/emojis/29764-verifieds.png" alt="Verified" class="verified-badge">
+                    </h3>
+                    <div class="role-list">
+                        <span class="role-tag">Creative Director</span>
+                        <span class="role-tag">Management</span>
+                        <span class="role-tag">Elementals</span>
+                        <span class="role-tag">MX•IV</span>
+                        <span class="role-tag">Fleet Designer</span>
+                        <span class="role-tag">
+                            <img src="https://cdn3.emoji.gg/emojis/335142-developericon.png" alt="Dev Icon" style="height: 14px; margin-right: 4px; vertical-align: middle;">
+                            Dev Team
+                        </span>
+                        <span class="role-tag">Dark God</span>
+                    </div>
+                    <p class="dev-desc">
+                        Script implementation and bug squashing. The engine room ensuring features work exactly as intended.
+                    </p>
+                    <div class="dev-socials">
+                        <a href="#" class="social-icon"><i class="fa-solid fa-bug"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-discord"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="brand" style="filter: grayscale(100%); opacity: 0.5;">
+                    <i class="fa-solid fa-city"></i>
+                    <div>AXT<span>City</span></div>
+                </div>
+                <p style="margin-top:15px; font-size:0.9rem;">AxtCity Roleplay creates a monochrome canvas where your story provides the color. A premium FiveM experience.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="lore.html">The Lore</a></li>
+                    <li><a href="developers.html">Developers</a></li>
+                    <li><a href="rules.html">City Rules</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Community</h4>
+                <ul>
+                    <li><a href="#">Discord</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">TikTok</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright-bar">
+            <p>© <span id="year"></span> AxtCity Roleplay. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Mobile Menu
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+        const overlay = document.getElementById('overlay');
+        const toggleIcon = mobileToggle.querySelector('i');
+
+        function toggleMenu() {
+            const isActive = navLinks.classList.toggle('active');
+            overlay.classList.toggle('active');
+            if (isActive) {
+                toggleIcon.classList.remove('fa-bars');
+                toggleIcon.classList.add('fa-xmark');
+                document.body.style.overflow = 'hidden';
+            } else {
+                toggleIcon.classList.remove('fa-xmark');
+                toggleIcon.classList.add('fa-bars');
+                document.body.style.overflow = '';
+            }
+        }
+        mobileToggle.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+
+        // Reveal Animation
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    </script>
+</body>
+</html>

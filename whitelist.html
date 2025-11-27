@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>AxtCity Whitelist Application | Apply to Join</title>
+    <meta name="description" content="Official application for the AxtCity Roleplay Whitelist. Serious RP starts here.">
+    <meta name="theme-color" content="#050505">
+    <link rel="icon" type="image/jpg" href="https://cdn.axt.co.in/logo.jpg">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* AXTCLOUD DESIGN SYSTEM */
+        :root {
+            --primary-red: #ff0000;
+            --dark-bg: #050505;
+            --card-bg: #111111;
+            --text-white: #ffffff;
+            --text-muted: #aaaaaa;
+            --border-color: #222;
+        }
+
+        /* PRODUCTION READY BASE & RESET */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-white);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        a { text-decoration: none; color: inherit; }
+        .highlight { color: var(--primary-red); }
+
+        /* STRUCTURE */
+        .header {
+            padding: 20px 5%;
+            display: flex;
+            justify-content: center;
+            background-color: #000;
+            border-bottom: 2px solid var(--primary-red);
+        }
+        .brand { 
+            font-size: 1.5rem; 
+            font-weight: 700; 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+            text-transform: uppercase; 
+            letter-spacing: 1px;
+        }
+        .brand span { color: var(--primary-red); }
+        .brand img { width: 40px; height: 40px; border-radius: 8px; }
+
+        .app-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* FORM STYLING */
+        .form-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .form-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            border-left: 4px solid var(--primary-red);
+            padding-left: 15px;
+        }
+
+        .form-group { margin-bottom: 20px; }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-white);
+            font-size: 0.95rem;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            background-color: #0d0d0d;
+            border: 1px solid #333;
+            color: var(--text-white);
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--primary-red);
+            box-shadow: 0 0 0 1px var(--primary-red);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .radio-group label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .radio-group input[type="radio"] {
+            margin-right: 8px;
+        }
+
+        .note {
+            color: #888;
+            font-size: 0.85rem;
+            margin-top: 5px;
+        }
+
+        .submit-group { text-align: center; margin-top: 40px; }
+        
+        /* CTA Button */
+        .submit-btn {
+            background: var(--primary-red);
+            padding: 15px 40px;
+            border-radius: 8px;
+            font-weight: 600;
+            color: white !important;
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: 0.3s;
+            width: 100%;
+            max-width: 350px;
+        }
+        .submit-btn:hover { background: #cc0000; transform: translateY(-2px); }
+
+        /* MESSAGE BOX */
+        #status-message {
+            display: none;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-align: center;
+        }
+        .status-success {
+            background-color: rgba(0, 255, 0, 0.1);
+            border: 1px solid green;
+            color: #4CAF50;
+        }
+        .status-error {
+            background-color: rgba(255, 0, 0, 0.1);
+            border: 1px solid var(--primary-red);
+            color: var(--primary-red);
+        }
+
+        /* FOOTER */
+        footer { 
+            background: #080808; 
+            border-top: 1px solid #222; 
+            padding: 30px 5%; 
+            color: #666; 
+            text-align: center;
+            margin-top: 40px;
+        }
+        footer p { font-size: 0.85rem; }
+
+        /* RESPONSIVENESS */
+        @media (max-width: 600px) {
+            .form-section { padding: 20px; }
+            .form-section h2 { font-size: 1.5rem; }
+            .submit-btn { max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="brand">
+            <img src="https://cdn.axt.co.in/logo.jpg" alt="AxtCity Logo">
+            <div>AXT<span>City</span> | Whitelist</div>
+        </div>
+    </div>
+
+    <div class="app-container">
+        
+        <h1 style="font-size: clamp(2rem, 5vw, 3.5rem); text-align: center; margin: 20px 0 10px; font-weight: 800; text-transform: uppercase;">
+            <span class="highlight">Application</span>
+        </h1>
+        <p style="text-align: center; color: var(--text-muted); margin-bottom: 30px;">
+            Your journey starts here. Answer honestly and demonstrate your understanding of Serious RP.
+        </p>
+        
+        <div id="status-message"></div>
+
+        <form id="whitelist-form"> 
+            
+            <div class="form-section">
+                <h2>1. Basic <span class="highlight">Information</span></h2>
+                
+                <div class="form-group">
+                    <label for="rp_name">Full Name (RP Name)</label>
+                    <input type="text" id="rp_name" name="rp_name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="discord_username">Discord Username (e.g., AxtDev#1234 or @axtdev)</label>
+                    <input type="text" id="discord_username" name="discord_username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address <span class="highlight">(Required for confirmation)</span></label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="fivem_id">FiveM / Rockstar Social Club ID</label>
+                    <input type="text" id="fivem_id" name="fivem_id" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" name="age" min="18" required>
+                    <p class="note">Minimum age requirement is 18.</p>
+                </div>
+                
+                <div class="form-group">
+                    <label for="timezone">Timezone & Country</label>
+                    <input type="text" id="timezone" name="timezone" placeholder="e.g., IST, India" required>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <h2>2. Server & Character <span class="highlight">Details</span></h2>
+                
+                <div class="form-group">
+                    <label for="motivation">Why do you want to join AxtCity Roleplay? (Min. 3-4 sentences)</label>
+                    <textarea id="motivation" name="motivation" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="rp_experience">Have you been part of any RP server before? If so, which ones and for how long?</label>
+                    <textarea id="rp_experience" name="rp_experience" required></textarea>
+                </div>
+
+                <hr style="border-color:#222; margin: 30px 0;">
+                
+                <div class="form-group">
+                    <label for="char_name">Character Name (First and Last)</label>
+                    <input type="text" id="char_name" name="char_name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="char_background">Character Background / Story (Min. 5 sentences)</label>
+                    <textarea id="char_background" name="char_background" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="char_traits">Character Traits (Strengths & Weaknesses)</label>
+                    <textarea id="char_traits" name="char_traits" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="char_ambition">Character Occupation / Ambition in AxtCity</label>
+                    <input type="text" id="char_ambition" name="char_ambition" required>
+                </div>
+
+            </div>
+
+            <div class="form-section">
+                <h2>3. RP <span class="highlight">Knowledge</span></h2>
+                <p class="note" style="margin-bottom: 25px;">Explain these concepts in your **own words**.</p>
+
+                <div class="form-group"><label for="rdm">What is **RDM**? (Random Death Match)</label><textarea id="rdm" name="rdm" required></textarea></div>
+                <div class="form-group"><label for="vdm">What is **VDM**? (Vehicle Death Match)</label><textarea id="vdm" name="vdm" required></textarea></div>
+                <div class="form-group"><label for="failrp">What is **FailRP**?</label><textarea id="failrp" name="failrp" required></textarea></div>
+                <div class="form-group"><label for="v_of_life">Explain the **Value of Life** concept in RP.</label><textarea id="v_of_life" name="v_of_life" required></textarea></div>
+                <div class="form-group"><label for="metagaming">Explain **Metagaming**.</label><textarea id="metagaming" name="metagaming" required></textarea></div>
+                <div class="form-group"><label for="powergaming">Explain **Powergaming**.</label><textarea id="powergaming" name="powergaming" required></textarea></div>
+            </div>
+
+            <div class="form-section">
+                <h2>4. Situational <span class="highlight">Questions</span></h2>
+                <p class="note" style="margin-bottom: 25px;">Describe your **In-Character (IC) response**.</p>
+                
+                <div class="form-group"><label for="situation_robbery">You witness a robbery happening — what do you do?</label><textarea id="situation_robbery" name="situation_robbery" required></textarea></div>
+                <div class="form-group"><label for="situation_police">Police stops you for speeding — how do you respond IC?</label><textarea id="situation_police" name="situation_police" required></textarea></div>
+                <div class="form-group"><label for="situation_provoke">Someone is provoking you badly — how will you handle it without breaking rules?</label><textarea id="situation_provoke" name="situation_provoke" required></textarea></div>
+                <div class="form-group"><label for="situation_friend">Your friend asks you to break rules — what do you do?</label><textarea id="situation_friend" name="situation_friend" required></textarea></div>
+            </div>
+
+            <div class="form-section">
+                <h2>5. Agreement / <span class="highlight">Sign-Off</span></h2>
+                
+                <div class="form-group radio-group">
+                    <label>
+                        <input type="radio" name="agree_rules" value="Yes" required> I agree to follow all server rules and guidelines.
+                    </label>
+                    <label>
+                        <input type="radio" name="agree_ban" value="Yes" required> I agree that breaking rules may lead to a permanent ban.
+                    </label>
+                </div>
+                
+                <div class="form-group">
+                    <label for="signature">Signature (Type your RP name to confirm)</label>
+                    <input type="text" id="signature" name="signature" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="text" id="date" name="date" readonly style="color: #ccc;">
+                </div>
+
+                <div class="submit-group">
+                    <button type="submit" class="submit-btn" id="submit-btn">Submit Whitelist Application</button>
+                    <p class="note" style="margin-top: 15px; color:var(--primary-red); font-size: 0.9rem;">Applications are manually reviewed by City Management.</p>
+                </div>
+            </div>
+            
+        </form>
+    </div>
+    
+    <footer>
+        <p>© <span id="year"></span> AxtCity Roleplay. All Rights Reserved.</p>
+        <p style="color:#444; margin-top:5px;">Not affiliated with Rockstar Games.</p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        document.getElementById('date').value = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+        const form = document.getElementById('whitelist-form');
+        const statusMessage = document.getElementById('status-message');
+        const submitBtn = document.getElementById('submit-btn');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            statusMessage.style.display = 'none';
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const response = await fetch('/api/whitelist', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    statusMessage.className = 'status-success';
+                    statusMessage.textContent = '✅ Application Submitted Successfully! Check your email for confirmation.';
+                    form.reset();
+                } else {
+                    throw new Error(result.message || 'Server error occurred.');
+                }
+            } catch (error) {
+                console.error('Submission Error:', error);
+                statusMessage.className = 'status-error';
+                statusMessage.textContent = `❌ Submission Failed: ${error.message}. Please try again later.`;
+            } finally {
+                statusMessage.style.display = 'block';
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit Whitelist Application';
+            }
+        });
+    </script>
+
+</body>
+</html>
