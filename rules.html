@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>AxtCity Rules | Official Code of Conduct and T&C</title>
+    <meta name="description" content="The comprehensive official Rulebook and Terms and Conditions for AxtCity Roleplay. Covers all legal, departmental, and gameplay rules for Serious RP.">
+    <meta name="keywords" content="AxtCity, FiveM Rules, Serious RP, Code of Conduct, Gang Rules, PD Rules, Content Creator Rules, Whitelist Application">
+    <meta name="theme-color" content="#ff0000">
+    <link rel="icon" type="image/jpg" href="https://cdn.axt.co.in/logo.jpg">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/rules.html">
+    <meta property="og:title" content="AxtCity Rules | Official Code of Conduct and T&C">
+    <meta property="og:description" content="The mandatory Rulebook for all AxtCity Roleplay citizens. Review the Core Rules, Legal Framework, and Departmental Guidelines before playing.">
+    <meta property="og:image" content="https://yourdomain.com/social-image.jpg"> 
+    
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yourdomain.com/rules.html">
+    <meta property="twitter:title" content="AxtCity Rules | Official Code of Conduct and T&C">
+    <meta property="twitter:description" content="The mandatory Rulebook for all AxtCity Roleplay citizens. Review the Core Rules, Legal Framework, and Departmental Guidelines before playing.">
+    <meta property="twitter:image" content="https://yourdomain.com/social-image.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* AXTCLOUD DESIGN SYSTEM */
+        :root {
+            --primary-red: #ff0000;
+            --primary-blue: #0088ff;
+            --primary-yellow: #ffff00;
+            --dark-bg: #050505;
+            --card-bg: #111111;
+            --text-white: #ffffff;
+            --text-muted: #aaaaaa;
+            --border-color: #222;
+        }
+
+        /* GLOBAL RESET & OPTIMIZATION */
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        
+        body {
+            font-family: 'Atkinson Hyperlegible', sans-serif; /* High readability font for long text */
+            background-color: var(--dark-bg);
+            color: var(--text-white);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* UTILITIES */
+        .highlight { color: var(--primary-red); }
+        .info-mark { color: var(--primary-yellow); }
+        .pd-mark { color: var(--primary-blue); }
+        .ems-mark { color: #00ffaa; }
+        
+        /* HEADER - Simple & Clean */
+        .page-header {
+            padding: 30px 5%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #000;
+            border-bottom: 2px solid var(--primary-red);
+            text-align: center;
+        }
+        .brand { 
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem; 
+            font-weight: 800; 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+            text-transform: uppercase; 
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        .brand span { color: var(--primary-red); }
+        .brand img { width: 40px; height: 40px; border-radius: 8px; }
+        
+        .page-header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(2rem, 6vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+        .page-header p {
+            color: var(--text-muted);
+            max-width: 800px;
+            font-size: 1.1rem;
+        }
+
+        /* MAIN CONTENT STRUCTURE */
+        .rules-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 5%;
+        }
+
+        /* RULE SECTION & CARD STYLING */
+        .rule-section {
+            margin-bottom: 50px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+        .rule-section h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            color: var(--primary-red);
+            border-left: 5px solid var(--primary-red);
+            padding-left: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .rule-section h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--text-white);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .rule-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+        .rule-card h4 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--primary-red);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+        }
+        .rule-card h4 i { color: var(--primary-red); font-size: 1.1em; }
+
+        .rule-list { margin-top: 10px; padding-left: 20px; list-style-type: '— '; }
+        .rule-list li { margin-bottom: 8px; font-size: 0.9rem; color: #ccc; }
+        .rule-list strong { color: var(--primary-red); font-weight: 700; }
+        
+        .note-box { 
+            margin: 20px 0;
+            padding: 15px; 
+            background: rgba(0, 136, 255, 0.1); /* Blue for legal notes */
+            border-left: 4px solid var(--primary-blue);
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+        
+        /* LEGAL TABLES */
+        .legal-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+        .legal-table th, .legal-table td {
+            border: 1px solid #222;
+            padding: 10px;
+            text-align: left;
+        }
+        .legal-table th {
+            background-color: #1a1a1a;
+            color: var(--primary-red);
+            font-weight: 600;
+        }
+        .legal-table tr:nth-child(even) {
+            background-color: #0d0d0d;
+        }
+        .legal-table tr:hover {
+            background-color: #1a1a1a;
+        }
+
+
+        /* FOOTER FIX */
+        footer { 
+            background: #080808; 
+            border-top: 1px solid #222; 
+            padding: 30px 5%; 
+            color: #666; 
+            text-align: center;
+            margin-top: 40px;
+        }
+        footer p { font-size: 0.85rem; }
+
+        @media (max-width: 600px) {
+            .page-header { padding: 20px 5%; }
+            .page-header h1 { font-size: 2.5rem; }
+            .rule-section h2 { font-size: 1.6rem; }
+            .rule-section h3 { font-size: 1.3rem; }
+            .rule-card { padding: 15px; }
+            .rule-list li { font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-header">
+        <div class="brand">
+            <img src="https://cdn.axt.co.in/logo.jpg" alt="AxtCity Logo">
+            <div>AXT<span>City</span> | Rulebook</div>
+        </div>
+        <h1>Official <span class="highlight">Code of Conduct</span></h1>
+        <p>This document details the Terms and Conditions (T&C) and the full Rulebook for AxtCity Roleplay. Adherence to these guidelines is mandatory for all players to maintain a high-quality Serious RP environment.</p>
+    </div>
+
+    <div class="rules-container">
+        
+        <section id="terms-conditions" class="rule-section">
+            <h2><i class="fa-solid fa-file-contract"></i> 1. Terms and Conditions (T&C)</h2>
+
+            <h3>Acceptance of Terms</h3>
+            <div class="rule-card">
+                <p style="font-size: 0.9rem;">By installing, registering, accessing, or otherwise using the AxtCity Roleplay service (the "Service"), you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions. These Terms constitute a binding legal agreement.</p>
+            </div>
+
+            <h3>Eligibility and Responsibility</h3>
+            <div class="rule-card">
+                <h4><i class="fa-solid fa-user-check"></i> Eligibility</h4>
+                <ul class="rule-list">
+                    <li>Age Requirement: The Service is intended for users who are at least 18 years of age.</li>
+                    <li>Account Responsibility: You are solely responsible for all activity that occurs under your account. Do not share your login credentials.</li>
+                </ul>
+            </div>
+            
+            <h3>Server Administration and Liability</h3>
+            <div class="rule-card">
+                <ul class="rule-list">
+                    <li>Limitation of Liability: The Administration is not liable for any damages or losses arising from the use or inability to use the Service.</li>
+                    <li>Service Availability: Service uptime is not guaranteed. The server may be temporarily unavailable for maintenance, updates, or unforeseen technical issues.</li>
+                    <li>Changes to Terms: The Administration reserves the right to modify these Terms and Conditions at any time. Continued use of the Service constitutes acceptance of the new Terms.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="core-rules" class="rule-section">
+            <h2><i class="fa-solid fa-gavel"></i> 2. Core Roleplay Rules & Enforcement</h2>
+            
+            <h3>General Roleplay Rules</h3>
+            <div class="rule-card">
+                <h4><i class="fa-solid fa-heart-pulse"></i> Value of Life (Fear RP)</h4>
+                <ul class="rule-list">
+                    <li>You must always act as if your character's life is precious and irreplaceable.</li>
+                    <li>You must comply with demands when a lethal weapon is pointed at you or when outnumbered (3:1) in a high-risk situation, provided the demands are reasonable (e.g., giving up property, not running).</li>
+                    <li>Running away or attacking an armed aggressor when you have no clear IC advantage or tactical plan is considered poor Fear RP.</li>
+                </ul>
+            </div>
+            
+            <div class="rule-card">
+                <h4><i class="fa-solid fa-book"></i> New Life Rule (NLR)</h4>
+                <ul class="rule-list">
+                    <li>If your character dies (respawns at a hospital or is pronounced DOA by EMS/PD), they must forget all recent events leading up to their death (the last 60 minutes).</li>
+                    <li>You must not return to the area of your death or interact with the same scenario participants for 30 minutes.</li>
+                    <li>Your character retains long-term memory (job, friends, property, skills) but the immediate conflict is forgotten.</li>
+                </ul>
+            </div>
+
+            <div class="rule-card">
+                <h4><i class="fa-solid fa-mask"></i> Core Violations (Permanent Bans)</h4>
+                <ul class="rule-list">
+                    <li>Metagaming (MG): Using OOC information to gain an IC advantage.</li>
+                    <li>Combat Logging: Disconnecting to avoid an RP consequence (jail, death, robbery, paying a fine).</li>
+                    <li>Exploiting/Cheating: Using any game bug or external software (e.g., macros, external aim assistance) to gain an unfair advantage.</li>
+                    <li>Powergaming (PG): Forcing an action upon another player, or roleplaying unrealistic mechanical abilities (e.g., claiming to tank 20 gunshots).</li>
+                    <li>Grave Robbing: Looting a downed or deceased player whom you did not directly engage in combat with.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="crime-rules" class="rule-section">
+            <h2><i class="fa-solid fa-gun"></i> 3. Criminal & Hostile Interaction Rules</h2>
+            
+            <h3>Initiation and Combat</h3>
+            <div class="rule-card">
+                <h4><i class="fa-solid fa-bullhorn"></i> Initiation and Random Acts</h4>
+                <ul class="rule-list">
+                    <li>All hostile actions (robbing, kidnapping, attacking) must be preceded by clear, verbal, In-Character initiation. The victim must have a reasonable chance to comply or react.</li>
+                    <li>RDM/VDM: Attacking without clear RP justification is forbidden.</li>
+                    <li>Hostile Roleplay Limit: You cannot initiate a major hostile scenario (heist, kidnapping, etc.) alone. A minimum of 2 criminals is required.</li>
+                    <li>Green Zones: Hostile RP is strictly prohibited in hospital interiors, police station interiors, and official business buildings.</li>
+                </ul>
+            </div>
+
+            <h3>Robberies and Heists</h3>
+            <div class="rule-card">
+                <h4><i class="fa-solid fa-sack-dollar"></i> Robbery Rules</h4>
+                <ul class="rule-list">
+                    <li>Same Person Cooldown: You cannot rob the same individual for 60 minutes after the last interaction ended.</li>
+                    <li>Store/ATM Robbery: Maximum 2 criminals allowed.</li>
+                    <li>Major Heists (Bank/Jewelry/Vault): Requires minimum 3 X-PD officers on duty. Maximum 4 criminals may participate. All participants must wear a mask.</li>
+                    <li>Hostage Rules: Maximum concurrent hostages for a major heist is 4. Hostages cannot be friends/affiliates of the criminals, and their RP must be genuine.</li>
+                </ul>
+            </div>
+
+            <h3>Vehicle Crime and Theft</h3>
+            <div class="rule-card">
+                <h4><i class="fa-solid fa-car-crash"></i> Car Boosting and House Robbery</h4>
+                <ul class="rule-list">
+                    <li>Boosting must involve realistic RP time and tools (IC lockpicking, hotwiring).</li>
+                    <li>Do not steal vehicles designated for job use (e.g., EMS, Taxi, PD).</li>
+                    <li>If PD intervenes, you must roleplay the chase realistically; do not intentionally drive into Green Zones or intentionally use VDM to escape.</li>
+                    <li>House Robbery: Must involve realistic breaking and entering RP. Looting is limited to small, portable items.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="department-rules" class="rule-section">
+            <h2><i class="fa-solid fa-shield-virus"></i> 4. Department and Whitelisted Job Rules</h2>
+            
+            <h3>X-PD (Police Department) Rules</h3>
+            <div class="rule-card">
+                <h4><i class="fa-solid fa-gavel"></i> Conduct and Procedure</h4>
+                <ul class="rule-list">
+                    <li><span class="pd-mark">Professionalism:</span> PD must prioritize roleplay procedures and due process over "winning" the scenario.</li>
+                    <li><span class="pd-mark">Use of Force:</span> Force must be proportional to the threat and used as a last resort after attempting de-escalation.</li>
+                    <li><span class="pd-mark">Accountability:</span> PD officers are accountable for all their actions (documented in an FIR/report). Misconduct is investigated OOC.</li>
+                    <li><span class="pd-mark">Lethal Force:</span> PD may only use firearms to counter threats posed by criminals using firearms.</li>
+                </ul>
+            </div>
+
+            <h3>EMS (Emergency Medical Services) Rules</h3>
+            <div class="rule-card">
+                <h4><i class="fa-solid fa-user-nurse"></i> Neutrality and Care</h4>
+                <ul class="rule-list">
+                    <li>Neutrality: EMS are strictly neutral. They cannot carry weapons or participate in any criminal or police activity while on duty.</li>
+                    <li>Hostage Limit: EMS cannot be held hostage for more than 15 minutes and must be released safely upon request.</li>
+                    <li>Care Priority: Care must be provided to the nearest downed person first, regardless of faction. EMS cannot be forced to neglect an injured person.</li>
+                </ul>
+            </div>
+            
+            <h3>Whitelisted Job Rules (Mechanics, Real Estate, etc.)</h3>
+            <div class="rule-card">
+                <ul class="rule-list">
+                    <li>Employees must be In-Character at all times while on the clock and providing service.</li>
+                    <li>You may not use job perks (e.g., Mechanic vehicle repair tools, Real Estate keys) to benefit your criminal activities without explicit, severe consequences RP.</li>
+                    <li>The business must be roleplayed realistically, including opening/closing hours and appropriate pricing.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="legal-codes" class="rule-section">
+            <h2><i class="fa-solid fa-balance-scale-left"></i> 5. AxtCity Legal Framework & Citizens' Rights</h2>
+            
+            <div class="note-box">
+                <i class="fa-solid fa-exclamation-triangle"></i> This section details In-Character Law. Players must understand their rights, but OOC rules always supersede IC law.
+            </div>
+
+            <h3>5.1 AxtCity Bill of Fundamental Rights</h3>
+            <table class="legal-table">
+                <thead>
+                    <tr><th>Section</th><th>Right/Protection</th><th>IC Context</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>3</td><td>Right to Fair Trial</td><td>Presumed innocent until proven guilty; right to legal representation.</td></tr>
+                    <tr><td>4</td><td>Freedom of Expression</td><td>Right to free speech, limited by restrictions protecting public order (e.g., incitement to violence).</td></tr>
+                    <tr><td>6</td><td>Right to Privacy</td><td>Protection against arbitrary search; police require IC justification and often a warrant for major searches.</td></tr>
+                    <tr><td>10</td><td>Rights of the Accused</td><td>Right to be informed of charges and the right to remain silent (Protection Against Self-Incrimination).</td></tr>
+                </tbody>
+            </table>
+
+            <h3>5.2 Code of Criminal Procedure (CrPC) and Interaction</h3>
+            <div class="rule-card">
+                <h4><i class="fa-solid fa-user-shield"></i> Citizen Interactions with X-PD</h4>
+                <ul class="rule-list">
+                    <li>Compliance: Citizens are expected to comply with lawful orders (e.g., traffic stops, requests for ID).</li>
+                    <li>PD Hierarchy: Do not demand to see the DGP/Chief. Roleplay the situation with the attending officer first.</li>
+                    <li>No Harassment: Citizens must not harass or intentionally provoke PD officers (IC or OOC).</li>
+                    <li>Bail/Remand: Accused must be brought before a magistrate within 24 hours. Bail may be granted based on the offense.</li>
+                </ul>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© <span id="year"></span> AxtCity Roleplay. All Rights Reserved.</p>
+        <p style="color:#444; margin-top:5px;">Disclaimer: This is a fictional roleplay environment. All characters, laws, and events are purely IC. | Version 1.1 (Final Production)</p>
+    </footer>
+
+    <script>
+        // Update the current year dynamically
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
