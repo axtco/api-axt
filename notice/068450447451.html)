@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>Official Notice: Personnel Action - @arunneey</title>
+    <meta name="title" content="Official Notice | AxtCity Roleplay Personnel Action">
+    <meta name="description" content="Official announcement regarding disciplinary action taken against user @arunneey for non-responsiveness and dereliction of duty.">
+    <meta name="robots" content="noindex, follow">
+    <meta name="theme-color" content="#ff0000">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* AXTCLOUD DESIGN SYSTEM VARIABLES */
+        :root {
+            --primary-red: #ff0000;
+            --dark-bg: #050505;
+            --card-bg: #111111;
+            --text-white: #ffffff;
+            --text-muted: #aaaaaa;
+            --border-color: #333;
+            --shadow-red: rgba(255, 0, 0, 0.2);
+            --shadow-dark: rgba(0, 0, 0, 0.4);
+        }
+
+        /* BASE STYLES & CROSS-BROWSER OPTIMIZATION */
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            -webkit-tap-highlight-color: transparent; /* Disable touch highlight on mobile */
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-white);
+            line-height: 1.7;
+            padding: 20px 10px; /* Mobile-friendly padding */
+            -webkit-font-smoothing: antialiased; /* Better font rendering on Webkit/iOS */
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* NOTICE CONTAINER (Responsive Card) */
+        .notice-container {
+            width: 95%; /* Fluid width for mobile */
+            max-width: 800px;
+            background-color: var(--card-bg);
+            border: 2px solid var(--primary-red);
+            border-radius: 12px;
+            padding: clamp(20px, 5vw, 40px); /* Responsive padding */
+            box-shadow: 0 0 40px var(--shadow-red);
+            text-align: left;
+            margin: 20px 0;
+            animation: fadeIn 1s ease-out;
+        }
+
+        /* ANIMATION */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* HEADINGS */
+        .notice-container h1 {
+            font-size: clamp(1.8rem, 6vw, 2.8rem);
+            color: var(--primary-red);
+            text-align: center;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            font-weight: 900;
+            line-height: 1.1;
+        }
+        .notice-container h2 {
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
+            color: var(--text-white);
+            text-align: center;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+        .notice-container h3 {
+            font-size: clamp(1.1rem, 3.5vw, 1.4rem);
+            color: var(--primary-red);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        /* METADATA */
+        .metadata p {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            color: var(--text-muted);
+        }
+        .metadata strong {
+            color: var(--text-white);
+            font-weight: 600;
+        }
+
+        /* SECTIONS */
+        .section-content {
+            background-color: #1a1a1a;
+            padding: clamp(15px, 4vw, 20px);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #222;
+        }
+        
+        /* BAN HIGHLIGHT */
+        .ban-highlight {
+            text-align: center;
+            background: linear-gradient(90deg, #8b0000 0%, var(--primary-red) 100%);
+            padding: 15px;
+            margin: 30px 0;
+            border-radius: 8px;
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px var(--shadow-dark);
+        }
+
+        /* LISTS */
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 15px;
+        }
+        ul li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        ul li::before {
+            content: '»';
+            position: absolute;
+            left: 0;
+            color: var(--primary-red);
+            font-weight: bold;
+            font-size: 1.2em;
+            line-height: 1;
+        }
+
+        /* SIGNATURE */
+        .signature {
+            margin-top: 40px;
+            border-top: 1px dashed var(--border-color);
+            padding-top: 20px;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+        .signature strong {
+            color: var(--primary-red);
+            display: block;
+            font-size: 1.1rem;
+            font-style: normal;
+            font-weight: 700;
+            margin-top: 5px;
+        }
+        .separator {
+            width: 100px;
+            height: 3px;
+            background: var(--primary-red);
+            margin: 0px auto 30px auto;
+            border-radius: 5px;
+        }
+
+        /* MOBILE ADJUSTMENTS */
+        @media (max-width: 600px) {
+            body { align-items: flex-start; } /* Align to top on mobile */
+            .notice-container { margin: 10px 0; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="notice-container">
+
+    <h1>OFFICIAL PERSONNEL ACTION</h1>
+    <h2>AxtCity Roleplay Management Notice</h2>
+    <div class="separator"></div>
+
+    <div class="metadata">
+        <p><strong>Issued By:</strong> AxtCity Roleplay Management Team</p>
+        <p><strong>Date of Issuance:</strong> <span id="currentDate"></span></p>
+    </div>
+    
+    <div class="ban-highlight">
+        Permanent Ban & Termination of Association
+    </div>
+
+    <h3>Affected Individual & Prior Association</h3>
+    <div class="section-content">
+        <p><strong>Affected User:</strong> <span style="color: var(--primary-red); font-weight: 700;">@arunneey</span></p>
+        <p><strong>Prior Association/Role:</strong> (Role within AxtCity not specified, assumed Member/Affiliate)</p>
+        <p><strong>Reason Category:</strong> Gross Non-Responsiveness / Dereliction of Duty</p>
+    </div>
+
+    <h3>Grounds for Immediate & Permanent Action</h3>
+    <div class="section-content">
+        <p>The AxtCity Roleplay Management Team is officially announcing the permanent ban and immediate removal of all privileges for the individual identified above, effective immediately. This severe action is taken due to the complete cessation of communication and chronic non-responsiveness.</p>
+        
+        <p style="margin-top: 15px;">**Primary Violation:**</p>
+        <ul>
+            <li>Consistent and complete failure to respond to critical messages and attempts at professional communication from the AxtCity Core Team.</li>
+            <li>Demonstration of zero commitment, accountability, or responsibility toward any associated team functions or duties.</li>
+        </ul>
+    </div>
+
+    <h3>The Critical Nature of Communication in AxtCity</h3>
+    <div class="section-content">
+        <p>For any member or affiliate working with the AxtCity Core Team, **communication and responsiveness are the absolute minimum requirements.** Our community's foundation is built on coordinated effort and mutual reliability. When an individual entirely ceases communication, it effectively halts processes and destabilizes the team.</p>
+        
+        <p style="margin-top: 15px;">**Explanation of Impact:**</p>
+        <p>A non-responsive member is functionally equivalent to an absent member, creating immediate negative impacts:</p>
+        <ul>
+            <li>**Operational Blockage:** If the user held any specific role (even a minor one), the lack of response prevents handoffs, knowledge transfer, and continuation of ongoing tasks.</li>
+            <li>**Resource Waste:** Time and effort spent by active team members attempting to contact, coordinate, or compensate for the non-responsive individual are wasted resources.</li>
+            <li>**Integrity Breach:** Active participation and communication are tenets of respect for the project and fellow team members. Chronic non-responsiveness represents a serious breach of trust and commitment.</li>
+        </ul>
+        <p style="margin-top: 15px;">This failure to maintain basic responsiveness demonstrates an irreconcilable detachment from the project's integrity, necessitating this final and permanent administrative action.</p>
+    </div>
+
+    <div class="ban-highlight">
+        @arunneey is permanently banned from all AxtCity Roleplay servers and platforms (Discord, FiveM, etc.).
+    </div>
+
+    <div class="signature">
+        This action is final and non-negotiable. The AxtCity Management Team remains committed to upholding the standards of integrity and excellence for our community.
+        <strong>The AxtCity Roleplay Management</strong>
+    </div>
+
+</div>
+
+<script>
+    // Set current date dynamically for accuracy
+    document.getElementById('currentDate').textContent = new Date().toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+</script>
+
+</body>
+</html>
+
