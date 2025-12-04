@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>Mr. X and Associates - AxtCity Authority</title>
+    <meta name="title" content="Mr. X and Associates | AxtCity's Governing Authority">
+    <meta name="description" content="The distinguished in-game RP authority in AxtCity, specializing in both legal governance and discrete covert operations.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#ff0000">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- CORE DESIGN SYSTEM --- */
+        :root {
+            --primary-red: #ff0000;
+            --dark-bg: #050505;
+            --card-bg: #1a1a1a;
+            --text-white: #ffffff;
+            --text-muted: #aaaaaa;
+            --header-height: 80px;
+            --shadow-red: rgba(255, 0, 0, 0.4);
+            --shadow-dark: rgba(0, 0, 0, 0.8);
+            --glass-bg: rgba(26, 26, 26, 0.8);
+        }
+
+        /* --- RESET & OPTIMIZATION --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-white);
+            overflow-x: hidden;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+            background-image: url("https://placehold.co/1920x1080/050505/000000?text=Abstract+Dark+Grid");
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+        strong { font-weight: 600; color: var(--text-white); }
+
+        /* --- KEYFRAMES --- */
+        @keyframes headerGlow {
+            0% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px var(--primary-red); }
+            50% { text-shadow: 0 0 8px var(--text-white), 0 0 15px var(--primary-red); }
+            100% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px var(--primary-red); }
+        }
+
+        /* --- FADE IN SCROLL ANIMATION (Reveal) --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- HEADER (Sticky & Glass) --- */
+        header {
+            position: sticky; top: 0; width: 100%; height: var(--header-height);
+            display: flex; justify-content: center; align-items: center;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--primary-red);
+            padding: 0 5%;
+            z-index: 1000;
+        }
+
+        .brand { 
+            font-size: clamp(1.4rem, 4vw, 1.8rem); font-weight: 900; 
+            display: flex; align-items: center; gap: 12px; 
+            text-transform: uppercase; letter-spacing: 2px;
+            animation: headerGlow 3s infinite;
+        }
+        .brand span { color: var(--primary-red); }
+        .brand i { color: var(--primary-red); font-size: clamp(1.6rem, 5vw, 2rem); }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 80px 20px;
+            /* Subtle radial gradient focus */
+            background: radial-gradient(circle at center, rgba(15, 0, 0, 0.3) 0%, var(--dark-bg) 90%);
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 12vw, 5.5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            text-shadow: 0 0 20px var(--shadow-red);
+        }
+        .hero-title span {
+            color: var(--primary-red);
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 3.5vw, 1.5rem);
+            color: var(--text-muted);
+            max-width: 800px;
+            margin-bottom: 40px;
+        }
+
+        .cta-button {
+            background: var(--primary-red);
+            padding: 16px 45px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: white !important;
+            box-shadow: 0 10px 30px var(--shadow-red);
+            transition: transform 0.3s, background 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .cta-button:hover { 
+            background: #cc0000; 
+            transform: translateY(-5px) scale(1.03); 
+            box-shadow: 0 15px 40px var(--shadow-red);
+        }
+
+        /* --- MAIN CONTENT CONTAINER --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-top: 20px;
+        }
+        .section-heading h2 {
+            font-size: clamp(2.2rem, 6vw, 3.5rem);
+            font-weight: 900;
+            color: var(--text-white);
+            position: relative;
+            display: inline-block;
+            text-transform: uppercase;
+        }
+        .section-heading h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background: var(--primary-red);
+            border-radius: 2px;
+        }
+
+        /* --- OPERATIONS GRID --- */
+        .operations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .op-box {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #222;
+            transition: all 0.4s ease-in-out;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 20px var(--shadow-dark);
+        }
+        .op-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px var(--shadow-red);
+        }
+        
+        .op-box.legal { border-left: 5px solid #00ff00; }
+        .op-box.covert { border-left: 5px solid var(--primary-red); }
+
+        .op-box h4 {
+            font-size: 1.6rem;
+            color: var(--primary-red);
+            margin-bottom: 15px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .op-box p.description {
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .op-box ul li {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            padding-left: 10px;
+            position: relative;
+        }
+        .op-box ul li::before {
+            content: '•';
+            color: var(--primary-red);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* --- THE CORE STATEMENT --- */
+        .core-statement {
+            background: linear-gradient(135deg, #100000, #300000);
+            border: 2px solid var(--primary-red);
+            border-radius: 15px;
+            padding: 50px;
+            margin: 80px 0;
+            text-align: center;
+            box-shadow: 0 0 40px rgba(255, 0, 0, 0.3);
+        }
+        .core-statement h3 {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            color: var(--text-white);
+            margin-bottom: 15px;
+            font-weight: 900;
+        }
+        .core-statement blockquote {
+            font-size: clamp(1.1rem, 3.5vw, 1.4rem);
+            font-style: italic;
+            color: #ddd;
+            max-width: 900px;
+            margin: 20px auto;
+            line-height: 1.8;
+            border-left: 4px solid var(--primary-red);
+            padding-left: 20px;
+        }
+        .core-statement footer {
+            font-size: 1rem;
+            color: var(--primary-red);
+            font-weight: 700;
+            margin-top: 20px;
+        }
+
+        /* --- CONTACT SECTION (Info Cards) --- */
+        .contact-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        .info-card {
+            flex-basis: 300px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(5px);
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .info-card i {
+            font-size: 2rem;
+            color: var(--primary-red);
+            margin-bottom: 15px;
+        }
+        .info-card h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 10px;
+        }
+        .info-card p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+        
+        /* --- FOOTER --- */
+        footer {
+            background: #080808; 
+            border-top: 4px double var(--primary-red); 
+            padding: 40px 5%; 
+            margin-top: 50px; 
+            text-align: center;
+        }
+        .footer-logo {
+            font-size: 1.8rem; 
+            font-weight: 900; 
+            margin-bottom: 15px;
+            color: var(--text-white);
+        }
+        .footer-logo span { color: var(--primary-red); }
+        .footer-details {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        .detail-item {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        .detail-item strong {
+            display: block;
+            color: var(--primary-red);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        .copyright-bar { 
+            margin-top: 25px; 
+            padding-top: 15px; 
+            border-top: 1px solid #222; 
+            color: #555; 
+            font-size: 0.8rem; 
+        }
+
+        /* MOBILE ADJUSTMENTS */
+        @media (max-width: 768px) {
+            .hero-title { padding-top: 30px; }
+            .contact-grid { flex-direction: column; align-items: center; }
+            .info-card { flex-basis: 100%; max-width: 400px; }
+            .core-statement { padding: 30px; margin: 60px 0 0 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="brand">
+            <i class="fa-solid fa-hat-cowboy"></i>
+            Mr. X & <span>Associates</span>
+        </a>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="reveal">
+            <h1 class="hero-title">The Foundation of <br><span>AxtCity</span> Order.</h1>
+            <p>Mr. X and Associates is the distinguished authority in AxtCity, operating under a mandate of absolute competence. We dictate the boundaries of governance and influence, ensuring the complex financial and social equilibrium of the city.</p>
+            <a href="#operations" class="cta-button">
+                View Operational Mandate <i class="fa-solid fa-arrow-right-long"></i>
+            </a>
+        </div>
+    </section>
+
+    <div class="container">
+
+        <!-- CORE MISSION SECTION -->
+        <section class="reveal">
+            <div class="section-heading">
+                <h2>Our Mission Parameters</h2>
+            </div>
+            <p style="text-align: center; font-size: 1.2rem; max-width: 900px; margin: 0 auto 50px; color: #ddd;">
+                We are the architects of AxtCity's power structure. Our success hinges on meticulous execution in two parallel domains: visible legal governance and highly sensitive covert market manipulation. No critical task falls outside our purview.
+            </p>
+        </section>
+
+        <!-- OPERATIONS SECTION -->
+        <section id="operations">
+            <div class="operations-grid">
+                
+                <!-- LEGAL OPS -->
+                <div class="op-box legal reveal">
+                    <h4><i class="fa-solid fa-scale-balanced"></i> Public Authority & Governance</h4>
+                    <p class="description">Our official, government-sanctioned arm maintains public order and structures the corporate environment.</p>
+                    <ul>
+                        <li><strong>Corporate Strategy:</strong> Managing high-value AxtCity companies as strategic partners.</li>
+                        <li><strong>Regulatory Control:</strong> Facilitating and issuing essential government permits to ensure legal compliance.</li>
+                        <li><strong>Economic Stability:</strong> Providing oversight on major market transactions to prevent systemic collapse.</li>
+                        <li><strong>Official Status:</strong> Recognized entity with official privileges within the AxtCity governance framework.</li>
+                    </ul>
+                </div>
+
+                <!-- COVERT OPS -->
+                <div class="op-box covert reveal">
+                    <h4><i class="fa-solid fa-user-secret"></i> Sub Rosa Operations</h4>
+                    <p class="description">The necessary, discreet division handling the city's complex shadow economy with surgical precision.</p>
+                    <ul>
+                        <li><strong>Financial Purity:</strong> Expertise in money washing, transforming and legitimizing large-scale illicit assets.</li>
+                        <li><strong>Asset Acquisition:</strong> Operating the network for the discrete procurement and distribution of illegal weapons and contraband.</li>
+                        <li><strong>Logistics Support:</strong> Providing specialized, high-grade tools and vehicles required for complex, robbery-based objectives.</li>
+                        <li><strong>Information Control:</strong> Managing sensitive data flow to protect core interests and maintain operational secrecy.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- VISION STATEMENT -->
+        <section class="core-statement reveal">
+            <h3>The Principle of Absolute Discretion</h3>
+            <blockquote>
+                "Our involvement is not for recognition, but for results. In the public records, we are governance. In the shadows, we are indispensable. Everything remains calculated. Everything remains contained."
+            </blockquote>
+            <footer>— Mr. X, Founding Associate</footer>
+        </section>
+
+        <!-- CONTACT & LOCATION -->
+        <section id="contact">
+            <div class="section-heading">
+                <h2>Operational Hub & Contact</h2>
+            </div>
+
+            <div class="contact-grid">
+                
+                <div class="info-card reveal">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h4>Primary Location</h4>
+                    <p>City Square Paleto Bay</p>
+                    <p>Post Code 0341</p>
+                </div>
+                
+                <div class="info-card reveal">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <h4>Direct Line</h4>
+                    <p>Secure Communication:</p>
+                    <p style="color: var(--primary-red); font-weight: 700;">0550</p>
+                </div>
+
+                <div class="info-card reveal">
+                    <i class="fa-solid fa-user-tie"></i>
+                    <h4>Affiliations</h4>
+                    <p>Exclusive to Citizens of AxtCity</p>
+                    <p>Strictly unaffiliated with recognized Gangs/MCs</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <div class="footer-logo">
+            Mr. X & <span>Associates</span>
+        </div>
+        <div class="footer-details">
+            <div class="detail-item">
+                <strong>Address</strong>
+                Post Code 0341, City Square Paleto Bay
+            </div>
+            <div class="detail-item">
+                <strong>Contact</strong>
+                Secure Line: 0550
+            </div>
+            <div class="detail-item">
+                <strong>Commitment</strong>
+                Discretion. Loyalty. Authority.
+            </div>
+        </div>
+        <div class="copyright-bar">
+            <p>© <span id="year"></span> Mr. X and Associates. All Rights Reserved. An AxtCity Authority Entity.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // --- SCROLL ANIMATION LOGIC ---
+        const observerOptions = {
+            root: null, // viewport
+            rootMargin: '0px',
+            threshold: 0.1, // Trigger when 10% visible
+        };
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); // Stop observing once revealed
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    </script>
+
+</body>
+</html>
+
