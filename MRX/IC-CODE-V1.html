@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>AxtCity Citizen's Code of Conduct | Official Government Law</title>
+    <meta name="title" content="AxtCity Citizen's Code of Conduct">
+    <meta name="description" content="The official binding legal and social contract defining all IC laws and civic duties within AxtCity.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#ff0000">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- CORE DESIGN SYSTEM --- */
+        :root {
+            --primary-red: #ff0000;
+            --dark-bg: #050505;
+            --card-bg: #111111;
+            --sidebar-bg: #0a0a0a;
+            --text-white: #ffffff;
+            --text-muted: #aaaaaa;
+            --header-height: 80px;
+            --border-color: #222;
+        }
+
+        /* --- RESET & BASE --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-white);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+        ::selection { background: var(--primary-red); color: #fff; }
+
+        /* --- HEADER (Fixed for continuity) --- */
+        header {
+            position: fixed; top: 0; width: 100%; height: var(--header-height);
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(5, 5, 5, 0.95); backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0 5%; z-index: 1000;
+        }
+
+        .brand { font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; gap: 10px; text-transform: uppercase; letter-spacing: 1px; }
+        .brand span { color: var(--primary-red); }
+        .brand i { width: 40px; height: 40px; border-radius: 8px; font-size: 2rem; }
+
+        /* --- LAYOUT GRID --- */
+        .docs-container {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            max-width: 1400px;
+            margin: var(--header-height) auto 0;
+            min-height: 100vh;
+        }
+
+        /* --- SIDEBAR --- */
+        .docs-sidebar {
+            position: sticky;
+            top: var(--header-height);
+            height: calc(100vh - var(--header-height));
+            background: var(--sidebar-bg);
+            border-right: 1px solid var(--border-color);
+            padding: 30px 20px;
+            overflow-y: auto;
+        }
+
+        .sidebar-title {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .toc-link {
+            display: block;
+            padding: 10px 15px;
+            color: #888;
+            font-size: 0.95rem;
+            border-left: 2px solid transparent;
+            margin-bottom: 5px;
+            transition: all 0.2s;
+        }
+
+        .toc-link:hover { color: var(--text-white); background: rgba(255,255,255,0.02); }
+        
+        .toc-link.active {
+            color: var(--text-white);
+            border-left-color: var(--primary-red);
+            background: linear-gradient(90deg, rgba(255,0,0,0.05), transparent);
+        }
+
+        /* --- MAIN CONTENT --- */
+        .docs-content {
+            padding: 60px 8%;
+            max-width: 1000px;
+        }
+
+        /* Typography & Styles */
+        h1.page-title {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 10px;
+            color: var(--primary-red);
+        }
+        
+        .meta-info {
+            display: flex; gap: 20px; color: var(--text-muted); font-size: 0.9rem; margin-bottom: 50px; border-bottom: 1px solid var(--border-color); padding-bottom: 20px;
+        }
+        .meta-info span i { color: var(--primary-red); margin-right: 8px; }
+
+        .rule-section { margin-bottom: 60px; scroll-margin-top: 100px; }
+        
+        h2 { font-size: 2rem; color: var(--text-white); margin-bottom: 25px; display: flex; align-items: center; gap: 15px; }
+        h2::before { content: '\f02d'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: var(--primary-red); opacity: 0.5; font-size: 1.5rem; }
+
+        h3 { 
+            font-size: 1.4rem; 
+            color: var(--primary-red); 
+            margin-top: 30px; 
+            margin-bottom: 15px; 
+            font-weight: 700; 
+            border-bottom: 1px dashed #333;
+            padding-bottom: 5px;
+        }
+
+        p { margin-bottom: 20px; color: #ccc; }
+
+        /* Rule Cards */
+        .rule-block {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            transition: 0.3s;
+        }
+        .rule-block:hover { border-color: var(--primary-red); box-shadow: 0 5px 20px rgba(255,0,0,0.05); }
+
+        .rule-block strong { color: var(--text-white); font-weight: 700; }
+        
+        ul.rule-list { list-style: none; padding-left: 0; }
+        ul.rule-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 15px;
+            color: #ddd;
+        }
+        ul.rule-list li::before {
+            content: '\f111'; /* FontAwesome Circle */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute; left: 0; top: 7px;
+            color: var(--primary-red);
+            font-size: 0.5rem;
+        }
+        
+        /* Fine/Penalty Box */
+        .penalty-box {
+            background: #150000;
+            border-left: 4px solid #ff4444;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 4px;
+            color: #ffcccc;
+            font-size: 0.95rem;
+        }
+        .penalty-box strong { color: #ff0000; }
+
+        /* Preamble Box */
+        .preamble-box {
+            background: linear-gradient(135deg, #100000 0%, #0a0a0a 100%);
+            border-left: 4px solid var(--primary-red);
+            padding: 30px;
+            border-radius: 0 12px 12px 0;
+            margin-bottom: 50px;
+            font-style: italic;
+            color: #ddd;
+        }
+
+        /* --- FOOTER --- */
+        .docs-footer {
+            margin-top: 80px; padding-top: 40px; border-top: 1px solid var(--border-color);
+            text-align: center; color: var(--text-muted); font-size: 0.9rem;
+        }
+        .signature {
+            font-family: 'Cursive', sans-serif;
+            font-size: 1.5rem; color: var(--primary-red); margin-top: 20px;
+        }
+
+        /* --- MOBILE --- */
+        @media (max-width: 992px) {
+            .docs-container { grid-template-columns: 1fr; }
+            .docs-sidebar { display: none; } 
+            .docs-content { padding: 40px 5%; }
+            .brand { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="brand">
+            <i class="fa-solid fa-gavel"></i>
+            <div>AXT<span>CITY CODE</span></div>
+        </div>
+        <!-- No mobile toggle needed as sidebar is hidden on small screens -->
+    </header>
+
+    <div class="docs-container">
+        
+        <!-- SIDEBAR NAVIGATION -->
+        <aside class="docs-sidebar">
+            <div class="sidebar-title">Code Sections</div>
+            <nav id="toc">
+                <a href="#preamble" class="toc-link active">Introduction</a>
+                <a href="#section1" class="toc-link">1. Civic Duties & ID</a>
+                <a href="#section2" class="toc-link">2. Public Order & Safety</a>
+                <a href="#section3" class="toc-link">3. Business & Licensing</a>
+                <a href="#section4" class="toc-link">4. Enforcement & Penalties</a>
+                <a href="#adherence" class="toc-link">Mandate of Adherence</a>
+            </nav>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="docs-content">
+            
+            <h1 class="page-title">AxtCity Citizen's Code of Conduct</h1>
+            <div class="meta-info">
+                <span><i class="fa-solid fa-landmark"></i> Authority: Mr. X and Associates</span>
+                <span><i class="fa-solid fa-book"></i> Type: Official IC Statute</span>
+            </div>
+
+            <!-- PREAMBLE -->
+            <section id="preamble" class="rule-section">
+                <div class="preamble-box">
+                    <h3>Preamble: Authority and Order</h3>
+                    <p>This Code represents the foundational legal framework of AxtCity. Every citizen, resident, and visitor is bound by these articles. The enforcement of this Code, including judicial and correctional measures, falls under the exclusive jurisdiction of the AxtCity Authority, represented by Mr. X and Associates.</p>
+                </div>
+            </section>
+
+            <!-- SECTION 1: CIVIC DUTIES -->
+            <section id="section1" class="rule-section">
+                <h2>1. Civic Duties and Identification</h2>
+                <p>Obligations required of every individual to maintain civil order and functional governance.</p>
+
+                <div class="rule-block">
+                    <h3>1.1 Mandatory Identification (ID)</h3>
+                    <ul class="rule-list">
+                        <li>Every individual within AxtCity jurisdiction must carry valid, government-issued photo identification at all times.</li>
+                        <li>Failure to produce identification upon request by an official authority (Police, Authority Representative) constitutes a violation of Article 1.1.</li>
+                        <li>Possession of counterfeit or multiple identification documents is a serious felony offense.</li>
+                    </ul>
+                    <div class="penalty-box">
+                        <strong>Penalty:</strong> Failure to Identify - Citation and immediate detention for record verification. Counterfeit ID - Felony charge and Asset Seizure.
+                    </div>
+                </div>
+
+                <div class="rule-block">
+                    <h3>1.2 Compliance with Authority</h3>
+                    <ul class="rule-list">
+                        <li>Citizens must comply immediately and non-verbally with all lawful commands issued by authorized Law Enforcement or AxtCity Authority personnel.</li>
+                        <li>Evasion of detention or physical resistance to arrest, regardless of the initial charge, escalates all charges to Felony Evasion.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SECTION 2: PUBLIC ORDER & SAFETY -->
+            <section id="section2" class="rule-section">
+                <h2>2. Public Order and Safety</h2>
+                <p>Regulations governing traffic, weapons, and general conduct in public spaces.</p>
+
+                <div class="rule-block">
+                    <h3>2.1 Traffic and Vehicle Code</h3>
+                    <ul class="rule-list">
+                        <li>All vehicles must be legally registered with the AxtCity Vehicle Registry. Operating an unregistered vehicle is an offense.</li>
+                        <li>Reckless endangerment through vehicular maneuvers (excessive speed in city limits, aggressive swerving, intentional collision) is strictly prohibited.</li>
+                        <li>Hit and Run involving property damage or injury is a Felony offense and results in immediate revocation of the driving license.</li>
+                    </ul>
+                </div>
+
+                <div class="rule-block">
+                    <h3>2.2 Public Carry of Weapons</h3>
+                    <ul class="rule-list">
+                        <li>Possession of firearms in public areas requires a valid Firearm Permit issued by the AxtCity Authority.</li>
+                        <li>Carrying concealed weapons without a specific concealed carry permit is prohibited.</li>
+                        <li>Use of any weapon to intimidate, threaten, or injure another citizen without clear self-defense justification is an aggravated assault felony.</li>
+                    </ul>
+                    <div class="penalty-box">
+                        <strong>Penalty:</strong> Public Weapons Violation - Confiscation of weapon, heavy fine, and potential prison sentence.
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3: BUSINESS AND LICENSING -->
+            <section id="section3" class="rule-section">
+                <h2>3. Business and Licensing</h2>
+                <p>Rules regarding commercial activity, taxation, and asset management within AxtCity.</p>
+
+                <div class="rule-block">
+                    <h3>3.1 Operating Licenses</h3>
+                    <ul class="rule-list">
+                        <li>All commercial enterprises (including street vendors and service providers) must possess a valid, renewed AxtCity Business License.</li>
+                        <li>Any large-scale financial transaction, property sale, or corporate merger must be registered with and approved by the AxtCity Authority Financial Oversight Board.</li>
+                    </ul>
+                </div>
+
+                <div class="rule-block">
+                    <h3>3.2 Financial Crime</h3>
+                    <ul class="rule-list">
+                        <li>Failure to pay required city taxes or fees by the annual deadline constitutes Tax Evasion.</li>
+                        <li>Unlicensed manufacturing, distribution, or sale of prohibited goods (contraband, illegal narcotics, unregistered equipment) is deemed Organized Crime, a high-level felony.</li>
+                        <li>Money laundering or misrepresentation of asset origin is strictly illegal and subject to full asset seizure.</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <!-- SECTION 4: ENFORCEMENT & PENALTIES -->
+            <section id="section4" class="rule-section">
+                <h2>4. Enforcement & Penalties</h2>
+                <p>The consequences for breaches of the AxtCity Code.</p>
+
+                <div class="rule-block">
+                    <h3>4.1 Categorization of Charges</h3>
+                    <ul class="rule-list">
+                        <li><strong>Minor Citation:</strong> Traffic violations, failure to display valid tags, minor disturbances. (Fine only).</li>
+                        <li><strong>Misdemeanor:</strong> Petty theft, resisting minor compliance, simple assault. (Fine + Short Jail Sentence).</li>
+                        <li><strong>Felony:</strong> Aggravated assault, large-scale theft, illegal weapon use, evasion of authority, all financial crimes. (Heavy Fine + Extended Jail Sentence, possible Asset Seizure).</li>
+                    </ul>
+                </div>
+
+                <div class="rule-block">
+                    <h3>4.2 Authority to Detain</h3>
+                    <ul class="rule-list">
+                        <li>Law Enforcement and Authority Personnel are authorized to use proportionate force, including restraints, to detain and secure subjects in violation of this Code.</li>
+                        <li>The final determination of charges and sentencing is performed by an Authority representative upon processing.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- MANDATE -->
+            <section id="adherence" class="rule-section" style="text-align: center; margin-top: 80px;">
+                <i class="fa-solid fa-stamp" style="font-size: 3rem; color: var(--primary-red); margin-bottom: 20px;"></i>
+                <h2>Mandate of Adherence</h2>
+                <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto;">
+                    This document is law. Ignorance of the AxtCity Code provides no exemption from prosecution. All citizens are required to conduct themselves in accordance with these statutes.
+                </p>
+                <div class="signature">Mr. X and Associates - AxtCity Authority</div>
+            </section>
+
+            <div class="docs-footer">
+                <p>&copy; <span id="year"></span> AxtCity Authority. All Rights Reserved. Code Version 1.0.</p>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // SCROLL SPY LOGIC FOR SIDEBAR
+        const sections = document.querySelectorAll('.rule-section');
+        const navLinks = document.querySelectorAll('.toc-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            // Determine which section is currently active
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                // Add a buffer (e.g., 150px) so the link highlights before the section reaches the very top
+                if (window.scrollY >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            // Update active state in sidebar
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
