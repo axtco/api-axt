@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>AxtCity Penal Code: Law, Liability, and Procedure</title>
+    <meta name="title" content="AxtCity Penal Code | Law and Court Structure">
+    <meta name="description" content="The formal legal code establishing the structure, procedures, and authority of the AxtCity Judicial Court.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#ff0000">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- CORE DESIGN SYSTEM --- */
+        :root {
+            --primary-red: #ff0000;
+            --dark-bg: #050505;
+            --card-bg: #111111;
+            --sidebar-bg: #0a0a0a;
+            --text-white: #ffffff;
+            --text-muted: #aaaaaa;
+            --header-height: 80px;
+            --border-color: #222;
+        }
+
+        /* --- RESET & BASE --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-white);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+        ::selection { background: var(--primary-red); color: #fff; }
+
+        /* --- HEADER (Fixed for continuity) --- */
+        header {
+            position: fixed; top: 0; width: 100%; height: var(--header-height);
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(5, 5, 5, 0.95); backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0 5%; z-index: 1000;
+        }
+
+        .brand { font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; gap: 10px; text-transform: uppercase; letter-spacing: 1px; }
+        .brand span { color: var(--primary-red); }
+        .brand i { width: 40px; height: 40px; border-radius: 8px; font-size: 2rem; }
+
+        /* --- LAYOUT GRID --- */
+        .docs-container {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            max-width: 1400px;
+            margin: var(--header-height) auto 0;
+            min-height: 100vh;
+        }
+
+        /* --- SIDEBAR --- */
+        .docs-sidebar {
+            position: sticky;
+            top: var(--header-height);
+            height: calc(100vh - var(--header-height));
+            background: var(--sidebar-bg);
+            border-right: 1px solid var(--border-color);
+            padding: 30px 20px;
+            overflow-y: auto;
+        }
+
+        .sidebar-title {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .toc-link {
+            display: block;
+            padding: 10px 15px;
+            color: #888;
+            font-size: 0.95rem;
+            border-left: 2px solid transparent;
+            margin-bottom: 5px;
+            transition: all 0.2s;
+        }
+
+        .toc-link:hover { color: var(--text-white); background: rgba(255,255,255,0.02); }
+        
+        .toc-link.active {
+            color: var(--text-white);
+            border-left-color: var(--primary-red);
+            background: linear-gradient(90deg, rgba(255,0,0,0.05), transparent);
+        }
+
+        /* --- MAIN CONTENT --- */
+        .docs-content {
+            padding: 60px 8%;
+            max-width: 1000px;
+        }
+
+        /* Typography & Styles */
+        h1.page-title {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 10px;
+            color: var(--primary-red);
+        }
+        
+        .meta-info {
+            display: flex; gap: 20px; color: var(--text-muted); font-size: 0.9rem; margin-bottom: 50px; border-bottom: 1px solid var(--border-color); padding-bottom: 20px;
+        }
+        .meta-info span i { color: var(--primary-red); margin-right: 8px; }
+
+        .rule-section { margin-bottom: 60px; scroll-margin-top: 100px; }
+        
+        h2 { font-size: 2rem; color: var(--text-white); margin-bottom: 25px; display: flex; align-items: center; gap: 15px; }
+        h2::before { content: '\f105'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: var(--primary-red); opacity: 0.5; font-size: 1.5rem; }
+
+        h3 { 
+            font-size: 1.4rem; 
+            color: var(--primary-red); 
+            margin-top: 30px; 
+            margin-bottom: 15px; 
+            font-weight: 700; 
+            border-bottom: 1px dashed #333;
+            padding-bottom: 5px;
+        }
+        h4 {
+            font-size: 1.1rem;
+            color: #ccc;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        p { margin-bottom: 20px; color: #ccc; }
+
+        /* Rule Blocks/Cards */
+        .rule-block {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            transition: 0.3s;
+        }
+        .rule-block:hover { border-color: var(--primary-red); box-shadow: 0 5px 20px rgba(255,0,0,0.05); }
+
+        .rule-block strong { color: var(--text-white); font-weight: 700; }
+        
+        ul.rule-list { list-style: none; padding-left: 0; }
+        ul.rule-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 15px;
+            color: #ddd;
+        }
+        ul.rule-list li::before {
+            content: '\f111'; 
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute; left: 0; top: 7px;
+            color: var(--primary-red);
+            font-size: 0.5rem;
+        }
+        
+        /* Highlight Box for key definitions */
+        .definition-box {
+            background: #1a1a1a;
+            border-left: 4px solid #00ffff; /* Use cyan for legal definition emphasis */
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 4px;
+            color: #ccffff;
+            font-size: 0.95rem;
+        }
+        .definition-box strong { color: #00ffff; }
+
+        /* Preamble Box */
+        .preamble-box {
+            background: linear-gradient(135deg, #05051a 0%, #0a0a0a 100%);
+            border-left: 4px solid #00ffff;
+            padding: 30px;
+            border-radius: 0 12px 12px 0;
+            margin-bottom: 50px;
+            font-style: italic;
+            color: #ddd;
+        }
+
+        /* Code/Template Styling */
+        .template-container {
+            margin-top: 40px;
+            background: #000;
+            border: 1px solid #333;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .template-header {
+            background: #2a0000;
+            padding: 10px 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            border-bottom: 1px solid #ff0000;
+            color: #fff;
+        }
+
+        .code-block {
+            padding: 15px 20px;
+            white-space: pre-wrap; /* Allows wrapping */
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: #ddd;
+            line-height: 1.4;
+            user-select: all; /* Allows easy copy/paste */
+        }
+        
+        .code-block strong { color: #fff; }
+        .code-block .label { color: var(--primary-red); }
+        .code-block .markdown-code { color: #888; font-style: italic; }
+
+
+        /* --- FOOTER --- */
+        .docs-footer {
+            margin-top: 80px; padding-top: 40px; border-top: 1px solid var(--border-color);
+            text-align: center; color: var(--text-muted); font-size: 0.9rem;
+        }
+        .signature {
+            font-family: 'Cursive', sans-serif;
+            font-size: 1.5rem; color: var(--primary-red); margin-top: 20px;
+        }
+
+        /* --- MOBILE --- */
+        @media (max-width: 992px) {
+            .docs-container { grid-template-columns: 1fr; }
+            .docs-sidebar { display: none; } 
+            .docs-content { padding: 40px 5%; }
+            .brand { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="brand">
+            <i class="fa-solid fa-gavel"></i>
+            <div>AXT<span>JUDICIAL</span></div>
+        </div>
+    </header>
+
+    <div class="docs-container">
+        
+        <!-- SIDEBAR NAVIGATION -->
+        <aside class="docs-sidebar">
+            <div class="sidebar-title">AxtCity Penal Code</div>
+            <nav id="toc">
+                <a href="#preamble" class="toc-link active">Title 1: Judicial Authority</a>
+                <a href="#section1" class="toc-link">Section 1: General Provisions</a>
+                <a href="#section2" class="toc-link">Section 2: Criminal Liability</a>
+                <a href="#section3" class="toc-link">Section 3: Classification of Offenses</a>
+                <a href="#section16" class="toc-link">Section 16: Sentencing</a>
+                <a href="#section17" class="toc-link">Section 17: Procedure & Enforcement</a>
+                <a href="#section18" class="toc-link">Section 18: Evidence Templates</a>
+                <a href="#final" class="toc-link">Final Mandate</a>
+            </nav>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="docs-content">
+            
+            <h1 class="page-title">AxtCity Penal Code: Law, Liability, and Procedure</h1>
+            <div class="meta-info">
+                <span><i class="fa-solid fa-scale-balanced"></i> Oversight: Mr. X and Associates</span>
+                <span><i class="fa-solid fa-book"></i> Status: Official IC Statute, Version 1.2</span>
+            </div>
+
+            <!-- PREAMBLE -->
+            <section id="preamble" class="rule-section">
+                <div class="preamble-box">
+                    <h3>Title 1: Declaration of Judicial Authority</h3>
+                    <p>The AxtCity Judicial Court is established as the final arbiter of legal disputes and criminal prosecution within the city. Its authority is derived directly from the AxtCity Authority. All proceedings are conducted with calculated fairness and absolute adherence to the AxtCity Code.</p>
+                </div>
+            </section>
+
+            <!-- SECTION 1: GENERAL PROVISIONS -->
+            <section id="section1" class="rule-section">
+                <h2>Section 1: General Provisions</h2>
+
+                <div class="rule-block">
+                    <h3>1.01 Purpose and Objective of the AxtCity Penal Code</h3>
+                    <ul class="rule-list">
+                        <li>**A. Define Criminal Offenses:** The AxtCity Penal Code defines and classifies various criminal offenses, providing clarity on what behaviors are considered unlawful within society.</li>
+                        <li>**B. Establish Legal Standards:** By delineating specific acts as criminal offenses, the Penal Code sets legal standards that help maintain order and protect the rights and safety of individuals.</li>
+                        <li>**C. Prescribe Penalties:** The main function of the Penal Code is to specify the range of fines, imprisonment terms, probation, community service, and other sanctions imposed upon conviction.</li>
+                        <li>**D. Deterrence:** The Penal Code serves as a deterrent by outlining the potential consequences of engaging in criminal behavior, thereby promoting compliance with the law.</li>
+                        <li>**E. Rehabilitation and Restoration:** The Code incorporates provisions aimed at rehabilitation and restoration, including diversion programs and counseling to facilitate the reintegration of offenders into society.</li>
+                        <li>**F. Protect Public Safety and Welfare:** By prohibiting harmful behaviors and imposing sanctions, the Code helps safeguard public safety, reduce crime rates, and promote a sense of security.</li>
+                        <li>**G. Promote Equity and Justice:** The Penal Code will be applied in a manner that promotes equity and justice for all citizens, ensuring equal treatment and protecting the rights of the accused.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SECTION 2: PRINCIPLES OF CRIMINAL LIABILITY -->
+            <section id="section2" class="rule-section">
+                <h2>Section 2: Principles of Criminal Liability</h2>
+
+                <div class="rule-block">
+                    <h3>2.01 Definitions of Key Legal Concepts</h3>
+                    <ul class="rule-list">
+                        <li>**A. Actus Reus:** A Criminal Act; the physical act of causing or being involved in a crime.</li>
+                        <li>**B. Mens Rea:** The act of having Criminal Intent; doing something with the intent to commit a crime (e.g., premeditation or malicious intent).</li>
+                        <li>**C. Concurrence:** The requirement that the Actus Reus (the criminal act) and the Mens Rea (the criminal intent) must occur or exist at the same time to establish liability.</li>
+                        <li>**D. Causation:** The direct relationship between the offender's action and the resulting harm or effect.</li>
+                        <li>**E. Liability:** The state of being legally responsible for something, particularly a criminal offense or debt.</li>
+                        <li>**F. Felony:** A crime, typically involving violence or severe harm, regarded as more serious than a misdemeanor.</li>
+                        <li>**G. Misdemeanor:** A crime less serious than a felony.</li>
+                        <li>**H. Penalty:** A punishment imposed for breaking a law, rule, or contract.</li>
+                        <li>**I. Prosecution:** The institution and conduction of legal proceedings against someone in respect of a criminal charge.</li>
+                        <li>**J. Offense:** A breach of law or rule; an illegal act.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SECTION 3: CLASSIFICATION OF OFFENSES -->
+            <section id="section3" class="rule-section">
+                <h2>Section 3: Classification of Offenses</h2>
+
+                <div class="rule-block">
+                    <h3>3.01 Felonies and Misdemeanors</h3>
+                    <p>Criminal Offenses are classified based on their severity to determine appropriate penalties and legal procedures.</p>
+
+                    <h4>A. Felonies</h4>
+                    <ul class="rule-list">
+                        <li>**Definition:** Felonies are serious crimes that typically involve significant harm to individuals, property, or society as a whole (e.g., murder, robbery, kidnapping, organized crime).</li>
+                        <li>**Penalty:** Punishable by imprisonment for one or more years in a state penitentiary, heavy fines, and possible asset seizure.</li>
+                        <li>**Consequences:** Conviction may result in the loss of certain civil rights (e.g., business licenses, firearms permits).</li>
+                    </ul>
+
+                    <h4>B. Misdemeanors</h4>
+                    <ul class="rule-list">
+                        <li>**Definition:** Misdemeanors are less serious offenses involving lesser harm (e.g., petty theft, simple assault, disorderly conduct).</li>
+                        <li>**Penalty:** Generally punishable by imprisonment for less than a year in a local jail, fines, probation, community service, or alternative sanctions.</li>
+                    </ul>
+                    
+                    <h4>C. Hybrid Offenses (Wobblers)</h4>
+                    <ul class="rule-list">
+                        <li>Some offenses can be classified as either felonies or misdemeanors depending on factors such as the severity of the harm, the defendant's criminal history, or prosecutorial discretion.</li>
+                    </ul>
+                </div>
+
+                <div class="rule-block">
+                    <h3>3.02 Degrees of Offenses</h3>
+                    <p>Degrees refer to different levels of severity within a particular category of crime, corresponding to different ranges of punishment.</p>
+                    
+                    <h4>Third-Degree Offenses (Example)</h4>
+                    <ul class="rule-list">
+                        <li>Third-Degree Offenses are generally considered to be misdemeanors or low-level felonies, depending on the jurisdiction.</li>
+                        <li>Penalties may include shorter terms of imprisonment, fines, probation, community service, or other alternative sanctions.</li>
+                    </ul>
+
+                    <h4>Other Categories</h4>
+                    <ul class="rule-list">
+                        <li>Some jurisdictions may have additional categories, such as Infractions, which represent the least serious violations of the law, punishable primarily by fine or citations.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SECTION 16: SENTENCING AND PENALTIES -->
+            <section id="section16" class="rule-section">
+                <h2>Section 16: Sentencing and Penalties</h2>
+
+                <div class="rule-block">
+                    <h3>16.01 Sentencing Guidelines</h3>
+                    <p>These guidelines aim to promote consistency, fairness, and proportionality in sentencing decisions.</p>
+                    <ul class="rule-list">
+                        <li>**A. Nature and Severity of the Offense:** Guidelines consider the type and seriousness of the crime, including the harm caused and the use of weapons.</li>
+                        <li>**B. Criminal History and Prior Record:** Repeat offenders or individuals with a history of similar offenses may receive harsher penalties than first-time offenders.</li>
+                        <li>**C. Victim Impact Statements:** Statements detailing the physical, emotional, and financial impact of the crime on the victim will be considered.</li>
+                        <li>**D. Mitigating and Aggravating Factors:** Mitigating factors (remorse, cooperation) may warrant a lesser sentence; aggravating factors (violence, disregard for law) may justify a more severe sentence.</li>
+                        <li>**E. Statutory Factors and Mandatory Minimums:** Judges must consider mandatory minimum sentences for certain offenses as defined in the AxtCity Penal Code.</li>
+                        <li>**F. Rehabilitation and Restitution:** Sentencing will attempt to prioritize rehabilitation and restitution, aiming to address underlying issues and compensate victims for their losses.</li>
+                        <li>**H. Sentencing Discretion:** Judges retain judicial discretion to deviate from guidelines when warranted by the specific circumstances of the case, provided justification is given.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SECTION 17: PROCEDURE AND ENFORCEMENT -->
+            <section id="section17" class="rule-section">
+                <h2>Section 17: Procedure and Enforcement</h2>
+
+                <div class="rule-block">
+                    <h3>17.01 - 17.10 Arrest and Detention Procedures</h3>
+                    <ul class="rule-list">
+                        <li>**17.01 - Probable Cause:** Law enforcement must have **Probable Cause** (facts leading a reasonable person to believe a crime was committed) before making an arrest.</li>
+                        <li>**17.02/17.03 - Arrest Warrant/Warrantless:** Officers may obtain a warrant or make warrantless arrests when a crime is witnessed, a felony is suspected, or immediate action is required.</li>
+                        <li>**17.04 - Miranda Rights:** Upon arrest, individuals must be informed of their rights: right to remain silent, right to an attorney.</li>
+                        <li>**17.05 - Booking Process:** Following arrest, individuals are taken to facilities for booking (recording personal info, fingerprints, mugshots, property inventory).</li>
+                        <li>**17.06 - Detention or Bail Hearing:** A judge will determine whether the individual should be released on bail or held in custody pending trial.</li>
+                        <li>**17.07 - Pretrial Detention:** If bail is denied or unposted, the individual is held in pretrial detention, subject to the right to a speedy trial.</li>
+                        <li>**17.08 - Release Conditions:** Released individuals may be subjected to conditions like electronic monitoring or travel restrictions.</li>
+                        <li>**17.09/17.10 - Notification & Representation:** Individuals in custody have the right to notify family members and receive legal representation at all stages.</li>
+                    </ul>
+                </div>
+                
+                <div class="rule-block">
+                    <h3>17.12 Prosecution and Trial Preparation</h3>
+                    <ul class="rule-list">
+                        <li>**A. Review of Evidence:** Prosecutors review evidence to assess case strength and determine appropriate charges.</li>
+                        <li>**B. Charging Decision:** Formal charges are filed based on legal standards.</li>
+                        <li>**C. Pretrial Proceedings:** Prosecutors prepare for bail hearings and motions, and may negotiate with defense attorneys.</li>
+                        <li>**E. Trial Presentation:** Prosecutors present the case in court, bearing the burden of proving guilt beyond a reasonable doubt.</li>
+                        <li>**F. Sentencing Recommendations:** If the defendant is found guilty, prosecutors make sentencing recommendations based on guidelines.</li>
+                        <li>**G. Appeals:** Prosecutors handle appeals to defend the trial court's decision.</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <!-- SECTION 18: EVIDENCE SUBMISSION PROTOCOLS (NEW SECTION) -->
+            <section id="section18" class="rule-section">
+                <h2>Section 18: Official Evidence Submission Templates</h2>
+                <p>All evidence submitted to the AxtCity Judicial Court (typically via the designated #court channel) must strictly adhere to the following templates for official record-keeping and cross-verification. Files that are too large must be submitted <strong>ONLY</strong> via an accessible Google Drive Link.</p>
+
+                <!-- Defense Template -->
+                <div class="template-container">
+                    <div class="template-header"><i class="fa-solid fa-user-shield"></i> Template 1: Defense Evidence Submission</div>
+                    <pre class="code-block">
+<span class="label">## Defense Evidence</span>
+**Date & Time of Hearing**: November 10th 2025 - 09:15 PM 
+**Case Headed By:** Chief Justice Perumaal Pichai - &lt;@1056615626698915870> 
+**Evidence Submitted by**: 
+Baby Smoke - &lt;@117138547865157632> 
+**Defense or Prosecution**: __Defense__
+<span class="markdown-code">``` ```</span>
+**Evidence 1:**
+(*Image File_1: Labelled Bank Statement*)
+The Image File labelled Image File_1 Bank Statement contains the current bank transactional history and balance, including earnings, spendings and holdings of the Defendant Baby Smoke as requested by the Prosecution and Order of the &lt;@&1430540050902421575> as proof of Finance to settle Divorce Settlements.
+
+November 9th 2025
+
+**Evidence 2: **
+(*Video File_1: Harm 1*)
+The video labelled Video File_1 shows how the Defendant (Baby Smoke) has over time been assaulted and defamed by the opposing Party (Lexi Marvel).
+
+October 5th 2025
+
+<span class="markdown-code">``` ```</span>
+**Has Cross-Verification been completed**: Yes
+
+**Cross-Verification Done by**:
+Legal Representatives from District Attorney's Office: 
+- Mary Stronghold - &lt;@1297521391637368928>
+Legal Representative from &lt;@&1430540050902421575> :
+- Advocate Derrick Mathews - &lt;@878309835484053535> 
+ 
+<span class="markdown-code">``` ```</span></pre>
+                </div>
+
+                <!-- Prosecution Template -->
+                <div class="template-container">
+                    <div class="template-header"><i class="fa-solid fa-gavel"></i> Template 2: Prosecution Evidence Submission</div>
+                    <pre class="code-block">
+<span class="label">## Prosecution Evidence</span>
+**Date & Time of Hearing**: November 10th 2025 - 09:15 PM 
+**Case Headed By:** Chief Justice Perumaal Pichai - &lt;@1056615626698915870> 
+**Evidence Submitted by**: 
+Lexi Marvel - &lt;@117138547865157632> 
+**Defense or Prosecution**: __Prosecution__
+
+<span class="markdown-code">``` ```</span>
+**Evidence 1:**
+(*VideoFile_1: Harassment and Defamation_1*)
+The Video labelled VideoFile_1: Harassment and Defamation_1 includes a video taken by Witness 1: Bharat Chandran &lt;@729684619066081313> were in the accused Baby Smoke  verbally harassed and defamed the defense Lexi Marvel in her place of work after a disagreement between them.
+
+<span class="markdown-code">``` ```</span>
+**Has Cross-Verification been completed**: Yes
+
+**Cross-Verification Done by**:
+Legal Representatives from Henessey-Verick Legal: 
+- Alice Roland-Verrick - &lt;@836153350810632222> 
+Legal Representative from &lt;@&1430540050902421575> :
+- Advocate Derrick Mathews- &lt;@878309835484053535> 
+ 
+<span class="markdown-code">``` ```</span></pre>
+                </div>
+            </section>
+            
+            <!-- MANDATE -->
+            <section id="final" class="rule-section" style="text-align: center; margin-top: 80px;">
+                <i class="fa-solid fa-chess-king" style="font-size: 3rem; color: var(--primary-red); margin-bottom: 20px;"></i>
+                <h2>Final Mandate of Justice</h2>
+                <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto;">
+                    The AxtCity Judicial System is designed not merely for punishment, but for the precise balancing of the city's power and economic integrity. Justice is absolute, and its structure is maintained by the Authority without compromise.
+                </p>
+                <div class="signature">Under Seal of Mr. X and Associates</div>
+            </section>
+
+            <div class="docs-footer">
+                <p>&copy; <span id="year"></span> AxtCity Authority. All Rights Reserved. Judicial Code Version 1.2.</p>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // SCROLL SPY LOGIC FOR SIDEBAR
+        const sections = document.querySelectorAll('.rule-section');
+        const navLinks = document.querySelectorAll('.toc-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            // Determine which section is currently active
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                // Add a buffer (e.g., 150px) so the link highlights before the section reaches the very top
+                if (window.scrollY >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            // Update active state in sidebar
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
